@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #1363C6;
+    --primary: #37877d;
     --secondary: #15ACE1;
     --light: #F4F7FE;
     --dark: #14183E;
@@ -36,6 +36,7 @@ h2,
 h3,
 .fw-bold {
     font-weight: 700 !important;
+   
 }
 
 h4,
@@ -80,51 +81,91 @@ h6,
 
 
 /*** Navbar ***/
-.sticky-top {
-    top: -150px;
-    transition: .5s;
-}
+/* .sticky-top {
+    /* top: -150px;
+    transition: .5s; */
+    
+    /* top: 0;
+    transition: top 0.3s ease-in-out;
+    z-index: 1020;
+} */
 
-.navbar {
+/* .navbar {
+
     padding: 11px 0 !important;
     height: 75px;
-}
+    height: auto;
+    background-color:#006666;
+} */ 
 
-.navbar .navbar-nav .nav-link {
+
+/* .navbar .navbar-nav .nav-link {
     margin-right: 35px;
-    padding: 0;
+    padding: 5px 0;
     color: rgba(255, 255, 255, .7);
     outline: none;
-}
+} */
 
-.navbar .navbar-nav .nav-link:hover,
+/* .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
     color: rgba(255, 255, 255, 1);
-}
+    
+} */
 
-.navbar .dropdown-toggle::after {
+/* .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     vertical-align: middle;
     margin-left: 8px;
+    transition: transform 0.3s ease; 
+}
+.arrow-icon {
+    transition: transform 0.3s ease;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.arrow-icon.rotate {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none; 
+}
+
+.dropdown-menu.show {
+    display: block; 
 }
 
 @media (max-width: 991.98px) {
     .navbar .navbar-nav {
         padding: 0 15px;
+        background: #006666; 
         background: var(--primary);
     }
 
     .navbar .navbar-nav .nav-link  {
         margin-right: 0;
         padding: 10px 0;
+
+        color: rgba(255, 255, 255, 0.7);
     }
+    .navbar .navbar-nav .dropdown-menu {
+        display: none;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        position: static;
+        float: none;
+    }
+
 }
 
 @media (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {
+        position: absolute;
         display: block;
         border: none;
         margin-top: 0;
@@ -132,6 +173,9 @@ h6,
         opacity: 0;
         visibility: hidden;
         transition: .5s;
+        transition: all 0.5s ease;
+        z-index: 1;
+   
     }
 
     .navbar .nav-item:hover .dropdown-menu {
@@ -139,6 +183,185 @@ h6,
         visibility: visible;
         transition: .5s;
         opacity: 1;
+        z-index: 1;
+    }
+}
+ */
+
+/* Sticky Navbar */
+.sticky-top {
+    top: 0; /* Position at the top */
+    transition: top 0.3s ease-in-out; /* Smooth transition */
+    z-index: 1020; /* Keep navbar on top */
+}
+
+/* Navbar Styling */
+.navbar {
+    padding: 11px 0 !important; /* Padding for the navbar */
+    height: auto; /* Automatic height */
+    background-color: #006666; /* Navbar background color */
+    z-index: 1000;
+}
+
+/* Dropdown Arrow */
+.navbar .dropdown-toggle::after {
+    border: none; /* Remove border */
+    content: "\f107"; /* Font Awesome icon */
+    font-family: "Font Awesome 5 Free"; /* Font family */
+    font-weight: 900; /* Font weight */
+    vertical-align: middle; /* Align vertically */
+    margin-left: 8px; /* Space on the left */
+    transition: transform 0.3s ease; /* Smooth transition for the arrow */
+}
+
+
+.dropdown-menu {
+    display: none !important; /* Forces it to display */
+    visibility: visible !important; /* Ensures visibility */
+    opacity: 1 !important; /* Ensures opacity */
+    z-index: 1050; 
+   
+      transform: translate(-50%, 0); /* Center horizontally */
+     width: 1500px;
+     height: 700px;
+     box-shadow: 2px 2px 10px 0px rgba(17, 17, 17, 0.5);
+
+}
+
+.dropdown-menu.show {
+    display: block !important; /* Show dropdown when 'show' class is added */
+    position: relative;
+    left: -400px;}
+
+.arrow-icon {
+    transition: transform 0.3s ease; /* Smooth rotation */
+    margin-left: 5px; /* Space on the left */
+    cursor: pointer; /* Pointer cursor for clickable icon */
+}
+
+.arrow-icon.rotate {
+    transform: rotate(180deg); 
+    transition: transform 0.3s ease;/* Rotate arrow when open */
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    background-color: #f9f9f9;
+    min-width: 900px; /* Adjust width as needed */
+    /* border: 1px solid #ccc; */
+    z-index: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 1500px;
+    height: 600px;
+}
+
+/* Left Section */
+.dropdown-content-left, .dropdown-content-right, .dropdown-content-whats-new {
+    width: 30%;
+}
+
+.dropdown-content-left h3, .dropdown-content-right h4, .dropdown-content-whats-new h4 {
+    margin-top: 0;
+}
+
+.dropdown-content-left ul, .dropdown-content-right ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown-content-left li, .dropdown-content-right li {
+    margin-bottom: 10px;
+}
+
+.dropdown-content-left p, .dropdown-content-right p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* What's New Section */
+.dropdown-content-whats-new {
+    background-color: #111;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.news-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.news-item img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.news-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dropdown-content {
+        flex-direction: column;
+        min-width: 100%; /* Full width on smaller screens */
+    }
+
+    .dropdown-content-left, .dropdown-content-right, .dropdown-content-whats-new {
+        width: 100%; /* Full width for each section */
+        margin-bottom: 20px; /* Spacing between sections */
+    }
+
+    .news-item img {
+        width: 40px; /* Adjust image size for mobile */
+    }
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav {
+        padding: 0 15px; /* Padding for mobile */
+        background: #006666; /* Background color */
+    }
+
+    .navbar .navbar-nav .nav-link {
+        margin-right: 0; /* Remove margin on mobile */
+        padding: 10px 0; /* Padding for links */
+        color: rgba(255, 255, 255, 0.7); /* Link color */
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        position: static; /* Static position */
+        display: none; /* Hide dropdown on mobile */
+        float: none; /* Clear float */
+    }
+}
+
+/* Desktop Responsiveness */
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        position: absolute; /* Position dropdown absolutely */
+        display: none; /* Initially hidden */
+        border: none; /* Remove border */
+        margin-top: 0; /* No top margin */
+        top: 150%; /* Position below navbar */
+        opacity: 0; /* Initially transparent */
+        visibility: hidden; /* Hidden by default */
+        transition: all 0.5s ease; /* Smooth transition */
+        z-index: 1; /* Layering */
     }
 }
 
@@ -146,6 +369,7 @@ h6,
 /*** Hero Header ***/
 .hero-header {
     margin-top: -75px;
+    height: 650px;
     background: url(../img/bg-hero.png) center center no-repeat;
     background-size: cover;
 }
@@ -153,6 +377,198 @@ h6,
 .hero-header .breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
+
+.carousel-item {
+    height: 450px; /* Set a fixed height for the carousel items */
+}
+
+.carousel-item video {
+    border-radius: 20px; /* Adjust the value as needed */
+    overflow: hidden; /* Ensures the content stays within the rounded corners */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Ensures the video covers the container without distortion */
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 10%;  /* Adjust as needed */
+    left: 5%;  /* Adjust as needed */
+    color: #fff; /* White text */
+    padding: 10px; /* Padding around text */
+    border-radius: 5px; /* Rounded corners */
+    background: none; /* No background */
+}
+
+/* Styling the arrow buttons */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 88%; /* Adjust position */
+    transform: translateY(-50%);
+    background-color: transparent; /* Transparent background */
+    border-radius: 50%; /* Round border */
+    border: 0.05em solid white; /* White border */
+    width: 35px; /* Button size */
+    height: 35px; 
+    opacity: 1; /* Make sure the buttons are visible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Arrow color */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Left arrow button style */
+.carousel-control-prev {
+    left: 30px; /* Position the left arrow in the left corner */
+}
+
+/* Right arrow button style */
+.carousel-control-next {
+    right: 510px; /* Position the right arrow in the right corner */
+}
+
+.video-overlay-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/* Dot loading animation */
+.dots-container {
+    position: absolute;
+    top: 56%;
+    right: -1500px; /* Adjust position for dots */
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    animation: dot-blink 1.5s infinite ease-in-out;
+}
+
+/* Animation keyframes for dots blinking */
+@keyframes dot-blink {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+/* Timing the three dots */
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 200px; /* Adjust height for smaller screens */
+    }
+
+    .carousel-item video {
+        width: 100%; /* Full width to fit the container */
+        height: 100%; /* Full height to fit the container */
+        object-fit: cover; /* Ensure the video covers the container without distortion */
+    }
+
+    .carousel-caption {
+        top: 5%; /* Adjust caption position */
+        left: 3%; /* Adjust caption position */
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        position: absolute;
+        top: 88%; /* Adjust position as needed */
+        transform: translateY(-50%);
+        background-color: transparent; /* Transparent background */
+        border-radius: 50%; /* Round border */
+        border: 0.05em solid white; /* White border */
+        width: 30px; /* Smaller button size for mobile */
+        height: 30px; /* Smaller button size for mobile */
+        opacity: 1; /* Ensure the buttons are visible */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white; /* Arrow color */
+        font-size: 16px; /* Smaller font size for mobile */
+        font-weight: bold;
+    }
+
+    /* Left arrow button style */
+    .carousel-control-prev {
+        left: 20px; /* Adjust to position the left arrow in the left corner */
+    }
+
+    /* Right arrow button style */
+    .carousel-control-next {
+        right: 430px; /* Adjust to position the right arrow in the right corner */
+    }
+    /* Adjust dot positioning */
+    .dots-container {
+        position: absolute;
+        bottom: 10px; /* Position it at the bottom of the video */
+        left: 80%; /* Center dots horizontally */
+        transform: translateX(-50%); /* Center adjustment */
+        z-index: 2; /* Ensure dots are above the video */
+        display: flex; /* Flexbox for dot layout */
+        justify-content: center; /* Center the dots */
+    }
+
+    /* Individual dot styles */
+    .dot {
+        height: 8px; /* Adjust dot size for mobile */
+        width: 8px; /* Adjust dot size for mobile */
+        margin: 0 3px; /* Adjusted margin for spacing between dots */
+        background-color: white; /* Dot color */
+        border-radius: 50%; /* Round dots */
+        display: inline-block;
+        animation: dot-blink 1.5s infinite ease-in-out; /* Animation */
+    }
+
+    /* Animation keyframes for dots blinking */
+    @keyframes dot-blink {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 1; }
+    }
+
+    /* Timing the three dots */
+    .dot:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .dot:nth-child(2) {
+        animation-delay: 0.3s;
+    }
+
+    .dot:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+}
+
+
 
 
 /*** Section Title ***/
@@ -219,6 +635,20 @@ h6,
     background: url(../img/bg-about-img.png) top left no-repeat;
     background-size: contain;
 }
+.checklist .fa-check,.text-primary {
+    color: #37877d !important;}
+
+.btn-primary,.btn-outline-primary{
+   color: #37877d;  
+    border-color: #37877d;   
+    background-color: white;
+}
+.btn-primary:hover,.btn-outline-primary:hover{
+    background-color: #37877d;
+    color: white;
+    border-color: #37877d;
+}
+
 
 
 /*** Service ***/
