@@ -135,7 +135,7 @@
 
 <!-- Navbar Start -->
 <div class="container-fluid sticky-top p-0">
-  <nav class="navbar navbar-expand-lg navbar-dark p-0">
+  <nav class="navbar navbar-expand-lg navbar-dark p-0" style="position: relative;">
       <a href="index.html" class="navbar-brand ms-3">
           <h1 class="text-white ms-3">Saple<span class="text-dark">.</span>AI</h1>
       </a>
@@ -144,93 +144,177 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto">
-              <!-- Dropdown with clickable arrow -->
+              <!-- Products Dropdown -->
               <div class="nav-item dropdown">
                   <a href="#" class="nav-link" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Products
                       <i class="fas fa-chevron-down arrow-icon"></i>
                   </a>
-                  <div class="dropdown-menu bg-light" id="productsDropdownMenu">
-                      <div class="dropdown-content d-flex">
-                          <!-- Left Section -->
-                          <div class="dropdown-content-left pe-3">
-                              <h3>ai Platform</h3>
-                              <ul class="list-unstyled">
-                                  <li>
-                                      <strong>XO</strong>
-                                      <p>AI Chat Bot experience Optimization Platform for customer and employee.</p>
-                                  </li>
-                                  <li>
-                                      <strong>GALE</strong>
-                                      <p>Gen-AI app builder and model fine-tuning.</p>
-                                  </li>
-                                  <li>
-                                      <strong>Search AI</strong>
-                                      <p>Powerful Gen AI & Indexed search from any source.</p>
-                                  </li>
-                              </ul>
-                          </div>
-
-                          <!-- Right Section -->
-                          <div class="dropdown-content-right pe-3">
-                              <h4>Overview</h4>
-                              <ul class="list-unstyled">
-                                  <li>Automation AI</li>
-                                  <li>Contact Center AI</li>
-                                  <li>Agent AI</li>
-                              </ul>
-                          </div>
-
-                          <!-- What's New Section -->
-                          <div class="dropdown-content-whats-new">
-                              <h4>What's New</h4>
-                              <div class="news-item">
-                                  <img src="https://via.placeholder.com/50" alt="Keynote">
-                                  <p>Watch our CEO deliver the opening keynote at Kore Konversations 2024.</p>
-                              </div>
-                              <div class="news-item">
-                                  <img src="https://via.placeholder.com/50" alt="GALE">
-                                  <p>Meet GALE, the platform to put Gen AI & LLMs to work for your enterprise.</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+                  <div class="dropdown-menu p-3" >
+                    <div class="row">
+                        <!-- Sidebar -->
+                        <div class="col-md-3 sidebar">
+                            <h3>Kore.ai Platform</h3>
+                            <ul class="list-unstyled">
+                                <li><strong>XO</strong><br>AI Chat Bot experience Optimization Platform for customer and employee.</li>
+                                <li><strong>GALE</strong><br>Gen-AI app builder and model fine-tuning.</li>
+                                <li><strong>Search AI</strong><br>Powerful Gen AI & Indexed search from any source.</li>
+                            </ul>
+                        </div>
+                
+                        <!-- Main content -->
+                        <div class="col-md-6 content">
+                            <h3>Overview</h3>
+                            <p>Get a quick overview of the XO Platform.</p>
+                            <hr>
+                            <h4>Products</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Automation AI</strong><br>AI Virtual Agent Builder</li>
+                                <li><strong>Contact Center AI</strong><br>Build an AI-First Contact Center</li>
+                                <li><strong>Agent AI</strong><br>Empower agents to deliver great experiences.</li>
+                            </ul>
+                        </div>
+                
+                        <!-- Right Sidebar (What's New) -->
+                        <div class="col-md-3 video-section">
+                            <h4>What's New</h4>
+                            <div class="mb-4">
+                                <p><strong>Keynote at KK 2024</strong><br>Watch our CEO, Raj Koneru deliver the opening keynote at Kore Konversations 2024.</p>
+                                <button class="btn btn-custom">Watch Video</button>
+                            </div>
+                            <div class="mb-4">
+                                <p><strong>Introducing GALE</strong><br>Meet GALE, the platform to put GenAI & LLMs to work for your enterprise.</p>
+                                <button class="btn btn-custom">Watch Demo</button>
+                            </div>
+                            <div class="mt-4">
+                                <a href="#" class="btn btn-outline-light d-block mb-2">Pricing</a>
+                                <a href="#" class="btn btn-outline-light d-block mb-2">Talk to an expert</a>
+                                <a href="#" class="btn btn-outline-light d-block">Meet us in person</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
               </div>
 
-              <!-- Other dropdowns (Solutions, Resources) -->
-              <div class="nav-item dropdown">
-                  <a href="#" class="nav-link" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Solutions
-                      <i class="fas fa-chevron-down arrow-icon"></i>
-                  </a>
-                  <div class="dropdown-menu bg-light mt-2" id="solutionsDropdownMenu">
-                      <a href="feature.html" class="dropdown-item">Page 1</a>
-                      <a href="feature.html" class="dropdown-item">Page 2</a>
-                      <a href="feature.html" class="dropdown-item">Page 3</a>
-                  </div>
-              </div>
+        <!-- Solutions Dropdown -->
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Solutions
+            <i class="fas fa-chevron-down arrow-icon"></i>
+          </a>
+          <div class="dropdown-menu p-3" >
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-md-3 sidebar">
+                    <h3>Kore.ai Platform</h3>
+                    <ul class="list-unstyled">
+                        <li><strong>XO</strong><br>AI Chat Bot experience Optimization Platform for customer and employee.</li>
+                        <li><strong>GALE</strong><br>Gen-AI app builder and model fine-tuning.</li>
+                        <li><strong>Search AI</strong><br>Powerful Gen AI & Indexed search from any source.</li>
+                    </ul>
+                </div>
+        
+                <!-- Main content -->
+                <div class="col-md-6 content">
+                    <h3>Overview</h3>
+                    <p>Get a quick overview of the XO Platform.</p>
+                    <hr>
+                    <h4>Products</h4>
+                    <ul class="list-unstyled">
+                        <li><strong>Automation AI</strong><br>AI Virtual Agent Builder</li>
+                        <li><strong>Contact Center AI</strong><br>Build an AI-First Contact Center</li>
+                        <li><strong>Agent AI</strong><br>Empower agents to deliver great experiences.</li>
+                    </ul>
+                </div>
+        
+                <!-- Right Sidebar (What's New) -->
+                <div class="col-md-3 video-section">
+                    <h4>What's New</h4>
+                    <div class="mb-4">
+                        <p><strong>Keynote at KK 2024</strong><br>Watch our CEO, Raj Koneru deliver the opening keynote at Kore Konversations 2024.</p>
+                        <button class="btn btn-custom">Watch Video</button>
+                    </div>
+                    <div class="mb-4">
+                        <p><strong>Introducing GALE</strong><br>Meet GALE, the platform to put GenAI & LLMs to work for your enterprise.</p>
+                        <button class="btn btn-custom">Watch Demo</button>
+                    </div>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-outline-light d-block mb-2">Pricing</a>
+                        <a href="#" class="btn btn-outline-light d-block mb-2">Talk to an expert</a>
+                        <a href="#" class="btn btn-outline-light d-block">Meet us in person</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
 
-              <div class="nav-item dropdown">
-                  <a href="#" class="nav-link" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources
-                      <i class="fas fa-chevron-down arrow-icon"></i>
-                  </a>
-                  <div class="dropdown-menu bg-light mt-2" id="resourcesDropdownMenu">
-                      <a href="feature.html" class="dropdown-item">Page 1</a>
-                      <a href="feature.html" class="dropdown-item">Page 2</a>
-                      <a href="feature.html" class="dropdown-item">Page 3</a>
-                  </div>
-              </div>
+        <!-- Resources Dropdown -->
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Resources
+            <i class="fas fa-chevron-down arrow-icon"></i>
+          </a>
+         <div class="dropdown-menu p-3" >
+                    <div class="row">
+                        <!-- Sidebar -->
+                        <div class="col-md-3 sidebar">
+                            <h3>Kore.ai Platform</h3>
+                            <ul class="list-unstyled">
+                                <li><strong>XO</strong><br>AI Chat Bot experience Optimization Platform for customer and employee.</li>
+                                <li><strong>GALE</strong><br>Gen-AI app builder and model fine-tuning.</li>
+                                <li><strong>Search AI</strong><br>Powerful Gen AI & Indexed search from any source.</li>
+                            </ul>
+                        </div>
+                
+                        <!-- Main content -->
+                        <div class="col-md-6 content">
+                            <h3>Overview</h3>
+                            <p>Get a quick overview of the XO Platform.</p>
+                            <hr>
+                            <h4>Products</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>Automation AI</strong><br>AI Virtual Agent Builder</li>
+                                <li><strong>Contact Center AI</strong><br>Build an AI-First Contact Center</li>
+                                <li><strong>Agent AI</strong><br>Empower agents to deliver great experiences.</li>
+                            </ul>
+                        </div>
+                
+                        <!-- Right Sidebar (What's New) -->
+                        <div class="col-md-3 video-section">
+                            <h4>What's New</h4>
+                            <div class="mb-4">
+                                <p><strong>Keynote at KK 2024</strong><br>Watch our CEO, Raj Koneru deliver the opening keynote at Kore Konversations 2024.</p>
+                                <button class="btn btn-custom">Watch Video</button>
+                            </div>
+                            <div class="mb-4">
+                                <p><strong>Introducing GALE</strong><br>Meet GALE, the platform to put GenAI & LLMs to work for your enterprise.</p>
+                                <button class="btn btn-custom">Watch Demo</button>
+                            </div>
+                            <div class="mt-4">
+                                <a href="#" class="btn btn-outline-light d-block mb-2">Pricing</a>
+                                <a href="#" class="btn btn-outline-light d-block mb-2">Talk to an expert</a>
+                                <a href="#" class="btn btn-outline-light d-block">Meet us in person</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
 
-              <a href="#" class="nav-item nav-link">Pricing</a>
-              <a href="#" class="nav-item nav-link">Contact</a>
-          </div>
-
-          <button type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#searchModal">
-              <i class="fa fa-search"></i>
-          </button>
+        <!-- Pricing & Contact Links -->
+        <a href="#" class="nav-item nav-link">Pricing</a>
+        <a href="#" class="nav-item nav-link">Contact</a>
       </div>
+
+      <!-- Search Button -->
+      <button type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#searchModal">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
   </nav>
 </div>
 <!-- Navbar End -->
+
+
 
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -238,18 +322,42 @@
 
 <!-- Optional JS for rotating chevron -->
 <script>
-  $(document).ready(function () {
-      $('.nav-item.dropdown').on('show.bs.dropdown', function () {
-          $(this).find('.arrow-icon').addClass('rotate');
-      });
-      $('.nav-item.dropdown').on('hide.bs.dropdown', function () {
-          $(this).find('.arrow-icon').removeClass('rotate');
-      });
+$(document).ready(function () {
+  // Handle dropdown toggle
+  $('.nav-item.dropdown > a').on('click', function (e) {
+      e.preventDefault(); // Prevent default action
+
+      var $this = $(this);
+      
+      // Close any other open dropdowns
+      $('.nav-item.dropdown').not($this.closest('.nav-item')).removeClass('show');
+      $('.dropdown-menu').not($this.next()).hide();
+
+      // Toggle the clicked dropdown
+      $this.closest('.nav-item').toggleClass('show');
+      $this.next('.dropdown-menu').toggle();
   });
+
+  // Show rotating arrow icon on dropdown open
+  $('.nav-item.dropdown').on('show.bs.dropdown', function () {
+      $(this).find('.arrow-icon').addClass('rotate');
+  });
+
+  // Hide rotating arrow icon on dropdown close
+  $('.nav-item.dropdown').on('hide.bs.dropdown', function () {
+      $(this).find('.arrow-icon').removeClass('rotate');
+  });
+
+  // Hide dropdowns when clicking outside
+  $(document).on('click', function (e) {
+      if (!$(e.target).closest('.nav-item.dropdown').length) {
+          $('.nav-item.dropdown').removeClass('show');
+          $('.dropdown-menu').hide();
+      }
+  });
+});
+
 </script>
-
-
-
 
 
    <!-- Hero Start -->

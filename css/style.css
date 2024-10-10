@@ -190,180 +190,171 @@ h6,
 
 /* Sticky Navbar */
 .sticky-top {
-    top: 0; /* Position at the top */
-    transition: top 0.3s ease-in-out; /* Smooth transition */
-    z-index: 1020; /* Keep navbar on top */
+    top: 0;
+    transition: top 0.3s ease-in-out;
+    z-index: 1020;
 }
 
-/* Navbar Styling */
 .navbar {
-    padding: 11px 0 !important; /* Padding for the navbar */
-    height: auto; /* Automatic height */
-    background-color: #006666; /* Navbar background color */
+    padding: 11px 0 !important;
+    background-color: #006666;
     z-index: 1000;
 }
 
-/* Dropdown Arrow */
+/* Navbar links */
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: 500;
+}
+
+/* Dropdown arrow icon styling */
 .navbar .dropdown-toggle::after {
-    border: none; /* Remove border */
-    content: "\f107"; /* Font Awesome icon */
-    font-family: "Font Awesome 5 Free"; /* Font family */
-    font-weight: 900; /* Font weight */
-    vertical-align: middle; /* Align vertically */
-    margin-left: 8px; /* Space on the left */
-    transition: transform 0.3s ease; /* Smooth transition for the arrow */
+    border: none;
+    content: "\f107"; /* Font Awesome Chevron Down Icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
 }
 
-
-.dropdown-menu {
-    display: none !important; /* Forces it to display */
-    visibility: visible !important; /* Ensures visibility */
-    opacity: 1 !important; /* Ensures opacity */
-    z-index: 1050; 
-   
-      transform: translate(-50%, 0); /* Center horizontally */
-     width: 1500px;
-     height: 700px;
-     box-shadow: 2px 2px 10px 0px rgba(17, 17, 17, 0.5);
-
-}
-
-.dropdown-menu.show {
-    display: block !important; /* Show dropdown when 'show' class is added */
-    position: relative;
-    left: -400px;}
-
-.arrow-icon {
-    transition: transform 0.3s ease; /* Smooth rotation */
-    margin-left: 5px; /* Space on the left */
-    cursor: pointer; /* Pointer cursor for clickable icon */
-}
-
+/* Rotate arrow when dropdown is open */
 .arrow-icon.rotate {
-    transform: rotate(180deg); 
-    transition: transform 0.3s ease;/* Rotate arrow when open */
+    transform: rotate(180deg);
+}
+.dropdown-menu{
+    position: relative;
+    right: 500px;
 }
 
+/* Dropdown Menu Basic Styles */
+.dropdown-menu {
+    display: none; /* Hide by default */
+    background-color: white !important; /* Solid background color for dropdown */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow for visibility */
+    width: 80vw; /* Set width to 80% of the viewport width */
+    max-width: 1000px; /* Set a maximum width */
+    height: auto; /* Set height to auto to fit content */
+    position: absolute; /* Absolute positioning for dropdown */
+    left: 70%; /* Center the dropdown horizontally */
+    top: 100%; /* Position below the trigger */
+    transform: translateX(-70%); /* Center horizontally */
+    z-index: 1050; /* Ensure it appears above other elements */
+    opacity: 1 !important; /* Ensure full opacity */
+}
+.dropdown-menu .row {
+    display: flex; /* Use flexbox to align items in the row */
+  
+}
 
+.dropdown-menu .col-md-3,
+.dropdown-menu .col-md-6 {
+    padding: 15px; /* Add padding for better spacing */
+}
+
+/* Show dropdown menu on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block; /* Show on hover */
+}
+
+/* Flexbox for dropdown content alignment */
 .dropdown-content {
-    display: none;
-    position: absolute;
-    bottom: 60px;
-    background-color: #f9f9f9;
-    min-width: 900px; /* Adjust width as needed */
-    /* border: 1px solid #ccc; */
-    z-index: 1;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    width: 1500px;
-    height: 600px;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: row; /* Change to column for vertical alignment if needed */
+    justify-content: flex-start; /* Align items to the start */
+    align-items: flex-start; /* Align items at the start vertically */
+    padding: 20px; /* Add padding around the dropdown content */
 }
 
-/* Left Section */
-.dropdown-content-left, .dropdown-content-right, .dropdown-content-whats-new {
-    width: 30%;
+/* Sidebar, Main Content, and Right Sidebar alignment */
+.sidebar,
+.content,
+.video-section {
+    flex: 1; /* Allow each section to grow */
+    margin-right: 20px; /* Right margin for spacing */
 }
 
-.dropdown-content-left h3, .dropdown-content-right h4, .dropdown-content-whats-new h4 {
-    margin-top: 0;
+.sidebar {
+    background-color: #f8f9fa; /* Light background */
+    padding: 15px; /* Add padding */
+    border-right: 1px solid #ddd; /* Separator line */
 }
 
-.dropdown-content-left ul, .dropdown-content-right ul {
-    list-style-type: none;
-    padding: 0;
+.sidebar h3,
+.sidebar h4 {
+    color: #8d8282; /* Header color */
 }
 
-.dropdown-content-left li, .dropdown-content-right li {
-    margin-bottom: 10px;
+/* Remove right margin for the last section */
+.video-section {
+    margin-right: 0; /* No margin on the last section */
 }
 
-.dropdown-content-left p, .dropdown-content-right p {
-    font-size: 14px;
-    color: #666;
+/* Adjusting styles for sidebar items */
+.sidebar ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
 }
 
-/* What's New Section */
-.dropdown-content-whats-new {
-    background-color: #111;
-    color: white;
+.sidebar ul li {
+    margin-bottom: 10px; /* Space between items */
+    color: #666; /* Text color */
+}
+
+.dropdown-menu li {
+    color: black;
     padding: 10px;
-    border-radius: 5px;
 }
 
-.news-item {
-    display: flex;
-    margin-bottom: 20px;
+/* Right sidebar (What's New) styling */
+.video-section {
+    background-color: #111; /* Dark background */
+    color: white; /* Text color */
+    padding: 15px; /* Padding */
+    margin-right: 15px;
 }
 
-.news-item img {
-    width: 50px;
-    height: auto;
-    margin-right: 10px;
+/* Buttons inside the dropdown */
+.btn-custom {
+    background-color: #ff8c00; /* Custom button color */
+    color: white; /* Text color */
+    border-radius: 5px; /* Rounded corners */
 }
 
-.news-item p {
-    margin: 0;
-    font-size: 14px;
+.btn-outline-light {
+    border-color: white; /* Outline color */
+    color: white; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px;
+    text-align: center;
 }
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: flex;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Media Queries for Responsive Navbar */
+@media (max-width: 992px) {
     .dropdown-content {
-        flex-direction: column;
-        min-width: 100%; /* Full width on smaller screens */
+        flex-direction: column; /* Stack sections vertically on smaller screens */
     }
 
-    .dropdown-content-left, .dropdown-content-right, .dropdown-content-whats-new {
-        width: 100%; /* Full width for each section */
-        margin-bottom: 20px; /* Spacing between sections */
+    .sidebar,
+    .content,
+    .video-section {
+        margin-right: 0; /* No margin on smaller screens */
+        width: 100%; /* Full width */
     }
-
-    .news-item img {
-        width: 40px; /* Adjust image size for mobile */
+}
+/* Media Queries for Responsive Dropdown */
+@media (max-width: 1200px) {
+    .dropdown-menu {
+        min-width: 100%; /* Use full width on smaller screens */
+        left: 0; /* Align to the left */
+        transform: translateX(0); /* Remove translation */
     }
 }
 
 
-/* Mobile Responsiveness */
-@media (max-width: 991.98px) {
-    .navbar .navbar-nav {
-        padding: 0 15px; /* Padding for mobile */
-        background: #006666; /* Background color */
-    }
-
-    .navbar .navbar-nav .nav-link {
-        margin-right: 0; /* Remove margin on mobile */
-        padding: 10px 0; /* Padding for links */
-        color: rgba(255, 255, 255, 0.7); /* Link color */
-    }
-
-    .navbar .nav-item .dropdown-menu {
-        position: static; /* Static position */
-        display: none; /* Hide dropdown on mobile */
-        float: none; /* Clear float */
-    }
-}
-
-/* Desktop Responsiveness */
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        position: absolute; /* Position dropdown absolutely */
-        display: none; /* Initially hidden */
-        border: none; /* Remove border */
-        margin-top: 0; /* No top margin */
-        top: 150%; /* Position below navbar */
-        opacity: 0; /* Initially transparent */
-        visibility: hidden; /* Hidden by default */
-        transition: all 0.5s ease; /* Smooth transition */
-        z-index: 1; /* Layering */
-    }
-}
 
 
 /*** Hero Header ***/
@@ -379,8 +370,10 @@ h6,
 }
 
 .carousel-item {
-    height: 450px; /* Set a fixed height for the carousel items */
+    height: 450px; /* Set a fixed height for desktop, adjust as needed */
+   
 }
+
 
 .carousel-item video {
     border-radius: 20px; /* Adjust the value as needed */
@@ -388,6 +381,7 @@ h6,
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     object-fit: cover; /* Ensures the video covers the container without distortion */
+
 }
 
 .carousel-caption {
