@@ -137,13 +137,13 @@
 <div class="container-fluid sticky-top p-0">
   <nav class="navbar navbar-expand-lg navbar-dark p-0" style="position: relative;">
       <a href="index.html" class="navbar-brand ms-3">
-          <h1 class="text-white ms-3">Saple<span class="text-dark">.</span>AI</h1>
+          <h1 class="text-white">Saple<span class="text-dark">.</span>AI</h1>
       </a>
-      <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+          <div class="navbar-nav">
               <!-- Products Dropdown -->
               <div class="nav-item dropdown">
                   <a href="#" class="nav-link" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -152,101 +152,213 @@
                   </a>
                   <div class="dropdown-menu p-3" >
                     <div class="row">
-                        <!-- Sidebar -->
-                        <div class="col-md-3 sidebar">
-                            <h3>Kore.ai Platform</h3>
-                            <ul class="list-unstyled">
-                                <li><strong>XO</strong><br>AI Chat Bot experience Optimization Platform for customer and employee.</li>
-                                <li><strong>GALE</strong><br>Gen-AI app builder and model fine-tuning.</li>
-                                <li><strong>Search AI</strong><br>Powerful Gen AI & Indexed search from any source.</li>
-                            </ul>
-                        </div>
+                         <!-- Sidebar -->
+<div class="col-md-3 sidebar">
+  <h3>Kore.ai Platform</h3>
+  <ul class="list-unstyled">
+      <li id="xo-item"><strong>XO</strong><br>AI Chat Bot experience Optimization Platform for customer and employee.</li>
+      <li id="item1"><strong>GALE</strong><br>Gen-AI app builder and model fine-tuning.</li>
+      <li id="item2"><strong>Search AI</strong><br>Powerful Gen AI & Indexed search from any source.</li>
+
+  </ul>
+</div>
+
+<!-- Main content -->
+<div class="col-md-6 content" id="overview-content" style="display: none;"> <!-- Initially hidden -->
+  <h3>Overview</h3>
+  <p>Get a quick overview of the XO Platform.</p>
+  <hr>
+  <h4>Products</h4>
+  <ul class="list-unstyled">
+      <li><strong>Automation AI</strong><br>AI Virtual Agent Builder</li>
+      <li><strong>Contact Center AI</strong><br>Build an AI-First Contact Center</li>
+      <li><strong>Agent AI</strong><br>Empower agents to deliver great experiences.</li>
+  </ul>
+</div>
+<div class="col-md-6 content" id="gale-content">
+  <h3>GALE</h3>
+  <p>Explore GALE, the Gen-AI app builder and model fine-tuning platform.</p>
+  <hr>
+  <h4>Key Features</h4>
+  <ul class="list-unstyled">
+      <li><strong>Feature 1</strong><br>Easy app development</li>
+      <li><strong>Feature 2</strong><br>Model customization options</li>
+  </ul>
+</div>
+
+<div class="col-md-6 content" id="search-content">
+  <h3>Search AI</h3>
+  <p>Discover the powerful Gen AI and indexed search capabilities.</p>
+  <hr>
+  <h4>Key Features</h4>
+  <ul class="list-unstyled">
+      <li><strong>Feature 1</strong><br>Search across multiple sources</li>
+      <li><strong>Feature 2</strong><br>Fast and accurate results</li>
+  </ul>
+</div>
+
                 
-                        <!-- Main content -->
-                        <div class="col-md-6 content">
-                            <h3>Overview</h3>
-                            <p>Get a quick overview of the XO Platform.</p>
-                            <hr>
-                            <h4>Products</h4>
-                            <ul class="list-unstyled">
-                                <li><strong>Automation AI</strong><br>AI Virtual Agent Builder</li>
-                                <li><strong>Contact Center AI</strong><br>Build an AI-First Contact Center</li>
-                                <li><strong>Agent AI</strong><br>Empower agents to deliver great experiences.</li>
-                            </ul>
-                        </div>
-                
-                        <!-- Right Sidebar (What's New) -->
-                        <div class="col-md-3 video-section">
-                            <h4>What's New</h4>
-                            <div class="mb-4">
-                                <p><strong>Keynote at KK 2024</strong><br>Watch our CEO, Raj Koneru deliver the opening keynote at Kore Konversations 2024.</p>
-                                <button class="btn btn-custom">Watch Video</button>
-                            </div>
-                            <div class="mb-4">
-                                <p><strong>Introducing GALE</strong><br>Meet GALE, the platform to put GenAI & LLMs to work for your enterprise.</p>
-                                <button class="btn btn-custom">Watch Demo</button>
-                            </div>
-                            <div class="mt-4">
-                                <a href="#" class="btn btn-outline-light d-block mb-2">Pricing</a>
-                                <a href="#" class="btn btn-outline-light d-block mb-2">Talk to an expert</a>
-                                <a href="#" class="btn btn-outline-light d-block">Meet us in person</a>
-                            </div>
-                        </div>
+                       <!-- Right Sidebar (What's New) -->
+<div class="col-md-6 video-section">
+  <h4>What's New</h4>
+  
+<!-- Video with custom play button -->
+<div class="video-wrapper mb-4">
+ 
+  <video class="custom-video" id="video1">
+      <source src="/saple.ai/video/sv.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+  <!-- Play Button in the center -->
+  <div class="play-button-overlay" id="playButton1">
+      <i class="fas fa-play-circle"></i>
+      
+  </div>
+  <div class="video-description">
+    <strong>Keynote at kk 2024</strong><br>
+    Watch our CEO, Raj Koneru deliver the opening keynote at Kore Konversations 2024.
+</div>
+  
+</div>
+
+
+<!-- GALE Demo Video -->
+<div class="video-wrapper mb-4">
+  <video class="custom-video" id="video2">
+      <source src="/saple.ai/video/video2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+  <!-- Play Button in the center -->
+  <div class="play-button-overlay" id="playButton2">
+      <i class="fas fa-play-circle"></i>
+  </div>
+  <div class="video-description">
+    <strong>Introducing GALE</strong><br>
+      Meet GALE, the platform to put GenAI & LLMs to work for your enterprise.
+  </div>
+</div>
+
+  <!-- Other links -->
+  <div class="mt-4">
+      <a href="#" class="btn btn-outline-light d-block mb-2">Pricing</a>
+      <a href="#" class="btn btn-outline-light d-block mb-2">Talk to an expert</a>
+      <a href="#" class="btn btn-outline-light d-block">Meet us in person</a>
+  </div>
+</div>
+
                     </div>
                 </div>
-              </div>
-
-        <!-- Solutions Dropdown -->
-        <div class="nav-item dropdown">
+        </div>
+         <!-- Solutions Dropdown -->
+         <div class="nav-item dropdown">
           <a href="#" class="nav-link" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Solutions
             <i class="fas fa-chevron-down arrow-icon"></i>
           </a>
           <div class="dropdown-menu p-3" >
             <div class="row">
-                <!-- Sidebar -->
-                <div class="col-md-3 sidebar">
-                    <h3>Kore.ai Platform</h3>
-                    <ul class="list-unstyled">
-                        <li><strong>XO</strong><br>AI Chat Bot experience Optimization Platform for customer and employee.</li>
-                        <li><strong>GALE</strong><br>Gen-AI app builder and model fine-tuning.</li>
-                        <li><strong>Search AI</strong><br>Powerful Gen AI & Indexed search from any source.</li>
-                    </ul>
-                </div>
-        
-                <!-- Main content -->
-                <div class="col-md-6 content">
-                    <h3>Overview</h3>
-                    <p>Get a quick overview of the XO Platform.</p>
-                    <hr>
-                    <h4>Products</h4>
-                    <ul class="list-unstyled">
-                        <li><strong>Automation AI</strong><br>AI Virtual Agent Builder</li>
-                        <li><strong>Contact Center AI</strong><br>Build an AI-First Contact Center</li>
-                        <li><strong>Agent AI</strong><br>Empower agents to deliver great experiences.</li>
-                    </ul>
-                </div>
-        
-                <!-- Right Sidebar (What's New) -->
-                <div class="col-md-3 video-section">
-                    <h4>What's New</h4>
-                    <div class="mb-4">
-                        <p><strong>Keynote at KK 2024</strong><br>Watch our CEO, Raj Koneru deliver the opening keynote at Kore Konversations 2024.</p>
-                        <button class="btn btn-custom">Watch Video</button>
+                 <!-- Sidebar -->
+<div class="col-md-3 sidebar">
+  <h3>Kore.ai Platform</h3>
+  <ul class="list-unstyled">
+      <li id="d2xo-item"><strong>XO</strong><br>AI Chat Bot experience Optimization Platform for customer and employee.</li>
+      <li id="d2item1"><strong>GALE</strong><br>Gen-AI app builder and model fine-tuning.</li>
+      <li id="d2item2"><strong>Search AI</strong><br>Powerful Gen AI & Indexed search from any source.</li>
+
+  </ul>
+</div>
+
+<!-- Main content -->
+<div class="col-md-6 content" id="d2overview-content" style="display: none;"> <!-- Initially hidden -->
+  <h3>Overview</h3>
+  <p>Get a quick overview of the XO Platform.</p>
+  <hr>
+  <h4>Products</h4>
+  <ul class="list-unstyled">
+      <li><strong>Automation AI</strong><br>AI Virtual Agent Builder</li>
+      <li><strong>Contact Center AI</strong><br>Build an AI-First Contact Center</li>
+      <li><strong>Agent AI</strong><br>Empower agents to deliver great experiences.</li>
+  </ul>
+</div>
+<div class="col-md-6 content" id="d2gale-content">
+  <h3>GALE</h3>
+  <p>Explore GALE, the Gen-AI app builder and model fine-tuning platform.</p>
+  <hr>
+  <h4>Key Features</h4>
+  <ul class="list-unstyled">
+      <li><strong>Feature 1</strong><br>Easy app development</li>
+      <li><strong>Feature 2</strong><br>Model customization options</li>
+  </ul>
+</div>
+
+<div class="col-md-6 content" id="d2search-content">
+  <h3>Search AI</h3>
+  <p>Discover the powerful Gen AI and indexed search capabilities.</p>
+  <hr>
+  <h4>Key Features</h4>
+  <ul class="list-unstyled">
+      <li><strong>Feature 1</strong><br>Search across multiple sources</li>
+      <li><strong>Feature 2</strong><br>Fast and accurate results</li>
+  </ul>
+</div>
+
+                
+                       <!-- Right Sidebar (What's New) -->
+<div class="col-md-6 video-section">
+  <h4>What's New</h4>
+  
+<!-- Video with custom play button -->
+<div class="video-wrapper mb-4">
+ 
+  <video class="custom-video" id="video1">
+      <source src="/saple.ai/video/sv.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+  <!-- Play Button in the center -->
+  <div class="play-button-overlay" id="playButton1">
+      <i class="fas fa-play-circle"></i>
+      
+  </div>
+  <div class="video-description">
+    <strong>Keynote at kk 2024</strong><br>
+    Watch our CEO, Raj Koneru deliver the opening keynote at Kore Konversations 2024.
+</div>
+  
+</div>
+
+
+<!-- GALE Demo Video -->
+<div class="video-wrapper mb-4">
+  <video class="custom-video" id="video2">
+      <source src="/saple.ai/video/video2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+  <!-- Play Button in the center -->
+  <div class="play-button-overlay" id="playButton2">
+      <i class="fas fa-play-circle"></i>
+  </div>
+  <div class="video-description">
+    <strong>Introducing GALE</strong><br>
+      Meet GALE, the platform to put GenAI & LLMs to work for your enterprise.
+  </div>
+</div>
+
+  <!-- Other links -->
+  <div class="mt-4">
+      <a href="#" class="btn btn-outline-light d-block mb-2">Pricing</a>
+      <a href="#" class="btn btn-outline-light d-block mb-2">Talk to an expert</a>
+      <a href="#" class="btn btn-outline-light d-block">Meet us in person</a>
+  </div>
+</div>
+
                     </div>
-                    <div class="mb-4">
-                        <p><strong>Introducing GALE</strong><br>Meet GALE, the platform to put GenAI & LLMs to work for your enterprise.</p>
-                        <button class="btn btn-custom">Watch Demo</button>
-                    </div>
-                    <div class="mt-4">
-                        <a href="#" class="btn btn-outline-light d-block mb-2">Pricing</a>
-                        <a href="#" class="btn btn-outline-light d-block mb-2">Talk to an expert</a>
-                        <a href="#" class="btn btn-outline-light d-block">Meet us in person</a>
-                    </div>
                 </div>
-            </div>
         </div>
-        </div>
+
+
+
+
+
 
         <!-- Resources Dropdown -->
         <div class="nav-item dropdown">
@@ -256,46 +368,100 @@
           </a>
          <div class="dropdown-menu p-3" >
                     <div class="row">
-                        <!-- Sidebar -->
-                        <div class="col-md-3 sidebar">
-                            <h3>Kore.ai Platform</h3>
-                            <ul class="list-unstyled">
-                                <li><strong>XO</strong><br>AI Chat Bot experience Optimization Platform for customer and employee.</li>
-                                <li><strong>GALE</strong><br>Gen-AI app builder and model fine-tuning.</li>
-                                <li><strong>Search AI</strong><br>Powerful Gen AI & Indexed search from any source.</li>
-                            </ul>
-                        </div>
+                      <!-- Sidebar -->
+<div class="col-md-3 sidebar">
+  <h3>Kore.ai Platform</h3>
+  <ul class="list-unstyled">
+      <li id="d3xo-item"><strong>XO</strong><br>AI Chat Bot experience Optimization Platform for customer and employee.</li>
+      <li id="d3item1"><strong>GALE</strong><br>Gen-AI app builder and model fine-tuning.</li>
+      <li id="d3item2"><strong>Search AI</strong><br>Powerful Gen AI & Indexed search from any source.</li>
+
+  </ul>
+</div>
+
+<!-- Main content -->
+<div class="col-md-6 content" id="d3overview-content" style="display: none;"> <!-- Initially hidden -->
+  <h3>Overview</h3>
+  <p>Get a quick overview of the XO Platform.</p>
+  <hr>
+  <h4>Products</h4>
+  <ul class="list-unstyled">
+      <li><strong>Automation AI</strong><br>AI Virtual Agent Builder</li>
+      <li><strong>Contact Center AI</strong><br>Build an AI-First Contact Center</li>
+      <li><strong>Agent AI</strong><br>Empower agents to deliver great experiences.</li>
+  </ul>
+</div>
+<div class="col-md-6 content" id="d3gale-content">
+  <h3>GALE</h3>
+  <p>Explore GALE, the Gen-AI app builder and model fine-tuning platform.</p>
+  <hr>
+  <h4>Key Features</h4>
+  <ul class="list-unstyled">
+      <li><strong>Feature 1</strong><br>Easy app development</li>
+      <li><strong>Feature 2</strong><br>Model customization options</li>
+  </ul>
+</div>
+
+<div class="col-md-6 content" id="d3search-content">
+  <h3>Search AI</h3>
+  <p>Discover the powerful Gen AI and indexed search capabilities.</p>
+  <hr>
+  <h4>Key Features</h4>
+  <ul class="list-unstyled">
+      <li><strong>Feature 1</strong><br>Search across multiple sources</li>
+      <li><strong>Feature 2</strong><br>Fast and accurate results</li>
+  </ul>
+</div>
+
                 
-                        <!-- Main content -->
-                        <div class="col-md-6 content">
-                            <h3>Overview</h3>
-                            <p>Get a quick overview of the XO Platform.</p>
-                            <hr>
-                            <h4>Products</h4>
-                            <ul class="list-unstyled">
-                                <li><strong>Automation AI</strong><br>AI Virtual Agent Builder</li>
-                                <li><strong>Contact Center AI</strong><br>Build an AI-First Contact Center</li>
-                                <li><strong>Agent AI</strong><br>Empower agents to deliver great experiences.</li>
-                            </ul>
-                        </div>
-                
-                        <!-- Right Sidebar (What's New) -->
-                        <div class="col-md-3 video-section">
-                            <h4>What's New</h4>
-                            <div class="mb-4">
-                                <p><strong>Keynote at KK 2024</strong><br>Watch our CEO, Raj Koneru deliver the opening keynote at Kore Konversations 2024.</p>
-                                <button class="btn btn-custom">Watch Video</button>
-                            </div>
-                            <div class="mb-4">
-                                <p><strong>Introducing GALE</strong><br>Meet GALE, the platform to put GenAI & LLMs to work for your enterprise.</p>
-                                <button class="btn btn-custom">Watch Demo</button>
-                            </div>
-                            <div class="mt-4">
-                                <a href="#" class="btn btn-outline-light d-block mb-2">Pricing</a>
-                                <a href="#" class="btn btn-outline-light d-block mb-2">Talk to an expert</a>
-                                <a href="#" class="btn btn-outline-light d-block">Meet us in person</a>
-                            </div>
-                        </div>
+                       <!-- Right Sidebar (What's New) -->
+<div class="col-md-6 video-section">
+  <h4>What's New</h4>
+  
+<!-- Video with custom play button -->
+<div class="video-wrapper mb-4">
+ 
+  <video class="custom-video" id="video1">
+      <source src="/saple.ai/video/sv.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+  <!-- Play Button in the center -->
+  <div class="play-button-overlay" id="playButton1">
+      <i class="fas fa-play-circle"></i>
+      
+  </div>
+  <div class="video-description">
+    <strong>Keynote at kk 2024</strong><br>
+    Watch our CEO, Raj Koneru deliver the opening keynote at Kore Konversations 2024.
+</div>
+  
+</div>
+
+
+<!-- GALE Demo Video -->
+<div class="video-wrapper mb-4">
+  <video class="custom-video" id="video2">
+      <source src="/saple.ai/video/video2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+  <!-- Play Button in the center -->
+  <div class="play-button-overlay" id="playButton2">
+      <i class="fas fa-play-circle"></i>
+  </div>
+  <div class="video-description">
+    <strong>Introducing GALE</strong><br>
+      Meet GALE, the platform to put GenAI & LLMs to work for your enterprise.
+  </div>
+</div>
+
+  <!-- Other links -->
+  <div class="mt-4">
+      <a href="#" class="btn btn-outline-light d-block mb-2">Pricing</a>
+      <a href="#" class="btn btn-outline-light d-block mb-2">Talk to an expert</a>
+      <a href="#" class="btn btn-outline-light d-block">Meet us in person</a>
+  </div>
+</div>
+
                     </div>
                 </div>
         </div>
@@ -322,42 +488,308 @@
 
 <!-- Optional JS for rotating chevron -->
 <script>
-$(document).ready(function () {
-  // Handle dropdown toggle
-  $('.nav-item.dropdown > a').on('click', function (e) {
-      e.preventDefault(); // Prevent default action
-
-      var $this = $(this);
-      
-      // Close any other open dropdowns
-      $('.nav-item.dropdown').not($this.closest('.nav-item')).removeClass('show');
-      $('.dropdown-menu').not($this.next()).hide();
-
-      // Toggle the clicked dropdown
-      $this.closest('.nav-item').toggleClass('show');
-      $this.next('.dropdown-menu').toggle();
+  $(document).ready(function () {
+    // Handle dropdown toggle
+    $('.nav-item.dropdown > a').on('click', function (e) {
+        e.preventDefault(); // Prevent default action
+  
+        var $this = $(this);
+        
+        // Close any other open dropdowns
+        $('.nav-item.dropdown').not($this.closest('.nav-item')).removeClass('show');
+        $('.dropdown-menu').not($this.next()).hide();
+  
+        // Toggle the clicked dropdown
+        $this.closest('.nav-item').toggleClass('show');
+        $this.next('.dropdown-menu').toggle();
+    });
+  
+    // Show rotating arrow icon on dropdown open
+    $('.nav-item.dropdown').on('show.bs.dropdown', function () {
+        $(this).find('.arrow-icon').addClass('rotate');
+    });
+  
+    // Hide rotating arrow icon on dropdown close
+    $('.nav-item.dropdown').on('hide.bs.dropdown', function () {
+        $(this).find('.arrow-icon').removeClass('rotate');
+    });
+  
+    // Hide dropdowns when clicking outside
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.nav-item.dropdown').length) {
+            $('.nav-item.dropdown').removeClass('show');
+            $('.dropdown-menu').hide();
+        }
+    });
   });
-
-  // Show rotating arrow icon on dropdown open
-  $('.nav-item.dropdown').on('show.bs.dropdown', function () {
-      $(this).find('.arrow-icon').addClass('rotate');
+  
+  // Assuming you have jQuery included
+  document.addEventListener('DOMContentLoaded', function() {
+      const playButton = document.getElementById('playButton1');
+      const video = document.getElementById('video1');
+      const dropdownMenu = document.querySelector('.dropdown-menu'); // Adjust this selector if necessary
+  
+      // Play the video when the play button is clicked
+      playButton.addEventListener('click', function(e) {
+          e.stopPropagation(); // Prevent click event from bubbling up
+          if (video.paused) {
+              video.play();
+              playButton.style.display = 'none'; // Hide the play button when the video plays
+          }
+      });
+  
+      // Show the dropdown when the menu button is clicked
+      const menuButton = document.querySelector('.menu-button'); // Replace with your actual menu button selector
+      menuButton.addEventListener('click', function(e) {
+          e.stopPropagation(); // Prevent the event from bubbling up to the document
+          dropdownMenu.classList.toggle('show'); // Toggle the dropdown menu visibility
+      });
+  
+      // Close the dropdown when clicking outside
+      window.addEventListener('click', function(e) {
+          if (!dropdownMenu.contains(e.target) && !menuButton.contains(e.target)) {
+              dropdownMenu.classList.remove('show');
+          }
+      });
+  
+      // Optional: Pause video when clicking the play button again (for toggle functionality)
+      video.addEventListener('pause', function() {
+          playButton.style.display = 'block'; // Show the play button when video is paused
+      });
   });
+  
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const xoItem = document.getElementById("xo-item");
+    const item1 = document.getElementById("item1");
+    const item2 = document.getElementById("item2");
+    
+    const overviewContent = document.getElementById("overview-content");
+    const galeContent = document.getElementById("gale-content");
+    const searchContent = document.getElementById("search-content");
 
-  // Hide rotating arrow icon on dropdown close
-  $('.nav-item.dropdown').on('hide.bs.dropdown', function () {
-      $(this).find('.arrow-icon').removeClass('rotate');
-  });
+    // Hide all content sections initially except the overview
+    galeContent.style.display = "none"; // Hide GALE content
+    searchContent.style.display = "none"; // Hide Search AI content
 
-  // Hide dropdowns when clicking outside
-  $(document).on('click', function (e) {
-      if (!$(e.target).closest('.nav-item.dropdown').length) {
-          $('.nav-item.dropdown').removeClass('show');
-          $('.dropdown-menu').hide();
-      }
-  });
+    // Show the overview content by default
+    overviewContent.style.display = "block"; // Initially visible
+
+    // Show the overview content when hovering over the XO item
+    xoItem.addEventListener("mouseover", function(e) {
+        e.stopPropagation(); // Prevent the event from bubbling up
+
+        // Hide other content sections
+        galeContent.style.display = "none";
+        searchContent.style.display = "none";
+
+        // Show the overview content
+        overviewContent.style.display = "block";
+    });
+
+    // Hide the overview content when the mouse leaves the XO item
+    xoItem.addEventListener("mouseout", function(e) {
+        e.stopPropagation(); // Prevent the event from bubbling up
+        overviewContent.style.display = "block"; // Keep it visible
+    });
+
+    // Handle mouseover for the GALE item
+    item1.addEventListener("mouseover", function(e) {
+        e.stopPropagation();
+
+        // Hide other content sections
+        overviewContent.style.display = "none";
+        searchContent.style.display = "none";
+
+        // Show GALE content
+        galeContent.style.display = "block";
+    });
+
+    // Handle mouseover for the Search AI item
+    item2.addEventListener("mouseover", function(e) {
+        e.stopPropagation();
+
+        // Hide other content sections
+        overviewContent.style.display = "none";
+        galeContent.style.display = "none";
+
+        // Show Search AI content
+        searchContent.style.display = "block";
+    });
+
+    // Hide all content when clicking outside of the items
+    document.addEventListener("click", function() {
+        overviewContent.style.display = "block"; // Keep it visible
+        galeContent.style.display = "none";
+        searchContent.style.display = "none";
+        overviewContent.classList.remove("highlight");
+    });
 });
 
-</script>
+document.addEventListener("DOMContentLoaded", function() {
+    const d2xoItem = document.getElementById("d2xo-item");
+    const d2item1 = document.getElementById("d2item1");
+    const d2item2 = document.getElementById("d2item2");
+    
+    const d2overviewContent = document.getElementById("d2overview-content");
+    const d2galeContent = document.getElementById("d2gale-content");
+    const d2searchContent = document.getElementById("d2search-content");
+
+    // Hide all content sections initially except the overview
+    d2galeContent.style.display = "none"; // Hide GALE content
+    d2searchContent.style.display = "none"; // Hide Search AI content
+
+    // Show the overview content by default
+    d2overviewContent.style.display = "block"; // Initially visible
+
+    // Show the overview content when hovering over the XO item
+    d2xoItem.addEventListener("mouseover", function(e) {
+        e.stopPropagation(); // Prevent the event from bubbling up
+
+        // Hide other content sections
+        d2galeContent.style.display = "none";
+        d2searchContent.style.display = "none";
+
+        // Show the overview content
+        d2overviewContent.style.display = "block";
+    });
+
+    // Hide the overview content when the mouse leaves the XO item
+    d2xoItem.addEventListener("mouseout", function(e) {
+        e.stopPropagation(); // Prevent the event from bubbling up
+        d2overviewContent.style.display = "block"; // Keep it visible
+    });
+
+    // Handle mouseover for the GALE item
+    d2item1.addEventListener("mouseover", function(e) {
+        e.stopPropagation();
+
+        // Hide other content sections
+        d2overviewContent.style.display = "none";
+        d2searchContent.style.display = "none";
+
+        // Show GALE content
+        d2galeContent.style.display = "block";
+    });
+
+    // Handle mouseover for the Search AI item
+    d2item2.addEventListener("mouseover", function(e) {
+        e.stopPropagation();
+
+        // Hide other content sections
+        d2overviewContent.style.display = "none";
+        d2galeContent.style.display = "none";
+
+        // Show Search AI content
+        d2searchContent.style.display = "block";
+    });
+
+    // Hide all content when clicking outside of the items
+    document.addEventListener("click", function() {
+        d2overviewContent.style.display = "block"; // Keep it visible
+        d2galeContent.style.display = "none";
+        d2searchContent.style.display = "none";
+        d2overviewContent.classList.remove("highlight");
+    });
+});
+
+   
+
+    // Video play button handling
+    document.querySelectorAll('.video-wrapper').forEach(wrapper => {
+        const video = wrapper.querySelector('video');
+        const playButton = wrapper.querySelector('.play-button-overlay');
+
+        playButton.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent click event from bubbling up
+            if (video.paused) {
+                video.play();
+                playButton.style.display = 'none'; // Hide the play button when playing
+            } else {
+                video.pause();
+                playButton.style.display = 'block'; // Show play button when paused
+            }
+        });
+
+        
+  document.addEventListener("DOMContentLoaded", function() {
+    const d3xoItem = document.getElementById("d3xo-item");
+    const d3item1 = document.getElementById("d3item1");
+    const d3item2 = document.getElementById("d3item2");
+    
+    const d3overviewContent = document.getElementById("d3overview-content");
+    const d3galeContent = document.getElementById("d3gale-content");
+    const d3searchContent = document.getElementById("d3search-content");
+
+    // Hide all content sections initially except the overview
+    d3galeContent.style.display = "none"; // Hide GALE content
+    d3searchContent.style.display = "none"; // Hide Search AI content
+
+    // Show the overview content by default
+    d3overviewContent.style.display = "block"; // Initially visible
+
+    // Show the overview content when hovering over the XO item
+    d3xoItem.addEventListener("mouseover", function(e) {
+        e.stopPropagation(); // Prevent the event from bubbling up
+
+        // Hide other content sections
+        d3galeContent.style.display = "none";
+        d3searchContent.style.display = "none";
+
+        // Show the overview content
+        d3overviewContent.style.display = "block";
+    });
+
+    // Hide the overview content when the mouse leaves the XO item
+    d3xoItem.addEventListener("mouseout", function(e) {
+        e.stopPropagation(); // Prevent the event from bubbling up
+        d3overviewContent.style.display = "block"; // Keep it visible
+    });
+
+    // Handle mouseover for the GALE item
+    d3item1.addEventListener("mouseover", function(e) {
+        e.stopPropagation();
+
+        // Hide other content sections
+        d3overviewContent.style.display = "none";
+        d3searchContent.style.display = "none";
+
+        // Show GALE content
+        d3galeContent.style.display = "block";
+    });
+
+    // Handle mouseover for the Search AI item
+    d3item2.addEventListener("mouseover", function(e) {
+        e.stopPropagation();
+
+        // Hide other content sections
+        d3overviewContent.style.display = "none";
+        d3galeContent.style.display = "none";
+
+        // Show Search AI content
+        d3searchContent.style.display = "block";
+    });
+
+    // Hide all content when clicking outside of the items
+    document.addEventListener("click", function() {
+        d3overviewContent.style.display = "block"; // Keep it visible
+        d3galeContent.style.display = "none";
+        d3searchContent.style.display = "none";
+        d3overviewContent.classList.remove("highlight");
+    });
+});
+
+   
+        // Show play button when video is paused
+        video.addEventListener('pause', function () {
+            playButton.style.display = 'block';
+        });
+    });
+
+
+
+  </script>
+  
 
 
    <!-- Hero Start -->

@@ -205,8 +205,18 @@ h6,
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 10px;
     font-weight: 500;
+    margin-right: 20px; /* Space between nav links */
+}
+
+.navbar-collapse{
+    position: absolute;
+    right:50px
+}
+/* Dropdown toggle positioning */
+.navbar .dropdown-toggle {
+    margin-left: auto; /* Move dropdown toggle to the right */
 }
 
 /* Dropdown arrow icon styling */
@@ -220,6 +230,12 @@ h6,
     transition: transform 0.3s ease;
 }
 
+/* Align the dropdown menu to the right */
+.dropdown-menu {
+    right: 0; /* Align the dropdown to the right */
+    left: auto; /* Disable left positioning */
+}
+
 /* Rotate arrow when dropdown is open */
 .arrow-icon.rotate {
     transform: rotate(180deg);
@@ -229,7 +245,7 @@ h6,
     right: 500px;
 }
 
-/* Dropdown Menu Basic Styles */
+
 .dropdown-menu {
     display: none; /* Hide by default */
     background-color: white !important; /* Solid background color for dropdown */
@@ -237,14 +253,17 @@ h6,
     border: none; /* Remove border */
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow for visibility */
     width: 80vw; /* Set width to 80% of the viewport width */
-    max-width: 1000px; /* Set a maximum width */
+    min-width: 800px; /* Set a maximum width */
     height: auto; /* Set height to auto to fit content */
     position: absolute; /* Absolute positioning for dropdown */
-    left: 70%; /* Center the dropdown horizontally */
+    left: 500px; /* Center the dropdown horizontally */
     top: 100%; /* Position below the trigger */
-    transform: translateX(-70%); /* Center horizontally */
+    transform: translateX(-78%); /* Center horizontally */
     z-index: 1050; /* Ensure it appears above other elements */
     opacity: 1 !important; /* Ensure full opacity */
+}
+.dropdown-menu.show {
+    display: block; /* Show when active */
 }
 .dropdown-menu .row {
     display: flex; /* Use flexbox to align items in the row */
@@ -310,30 +329,112 @@ h6,
     padding: 10px;
 }
 
-/* Right sidebar (What's New) styling */
+/* Resize the video */
+.custom-video {
+    width: 100%; /* Set video to be responsive within its container */
+    height: auto; /* Adjust the height automatically */
+    max-width: 180px; /* Limit the max size to 300px width */
+    border-radius: 10px; /* Rounded corners */
+    display: block;
+    position: relative;
+    z-index: 1;
+    pointer-events: none; /* Prevent interaction until play is clicked */
+}
+
+/* Style the play button */
+.play-button-overlay {
+    position: absolute;
+    top: 45%;
+    left: 17%;
+    transform: translate(-30%, -45%); /* Center the button */
+    font-size: 40px; /* Size of the play button */
+    color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    z-index: 2;
+   cursor: pointer;
+}
+
+/* Hover effect for the play button */
+.video-wrapper:hover .play-button-overlay {
+    color: rgba(255, 255, 255, 1); /* Full opacity on hover */
+}
+
+/* Video container */
+.video-wrapper {
+    position: relative;
+    width: 100%; /* Make the video take the full width of the section */
+    max-width: 900px; /* Limit the video width to 900px */
+    margin: 0 auto;
+}
+/* Styling for video description */
+.video-description {
+    color: white;
+    text-align: left; /* Align text to the left */
+    font-size: 14px;
+    position: absolute;
+    left: 42%;  /* Adjust the left position as needed */
+    top: 50%;   /* Center vertically */
+    transform: translateY(-50%); /* Adjust only the vertical centering */
+    max-width: 80%; /* Set a max width for text wrapping */
+}
+.video-section strong{
+    font-size: 18px;
+}
+
+
+/* Ensure the video-section maintains the right style */
 .video-section {
-    background-color: #111; /* Dark background */
-    color: white; /* Text color */
-    padding: 15px; /* Padding */
-    margin-right: 15px;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    width: 100% !important;        /* Force full width */
+    min-width: 500px !important;   /* Increase max-width */
+    margin: 0 auto;                /* Center the section */
+    box-sizing: border-box;
 }
 
-/* Buttons inside the dropdown */
+
+.video-section h4{
+    color:white;
+}
+/* Styling the buttons */
 .btn-custom {
-    background-color: #ff8c00; /* Custom button color */
-    color: white; /* Text color */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #006666;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
 }
 
-.btn-outline-light {
-    border-color: white; /* Outline color */
-    color: white; /* Text color */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px;
-    text-align: center;
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: #006666;
 }
+
+#xo-item,#item1,#item2 {
+    cursor: pointer; /* Show pointer on hover */
+    
+}
+
+#xo-item:hover,#item1:hover,#item2:hover,
+#d2xo-item:hover,#d2item1:hover,#d2item2:hover,
+#d3xo-item:hover,#d3item1:hover,#d3item2:hover {
+   background-color: #e1f2f0;
+}
+
 /* Media Queries for Responsive Navbar */
 @media (max-width: 992px) {
+    .navbar-collapse {
+        position: static; /* Set to static on small screens */
+        width: 100%; /* Full width */
+        margin: 0; /* Reset margin */
+    }
+    
+    .navbar-nav {
+        flex-direction: column; /* Stack nav links vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
     .dropdown-content {
         flex-direction: column; /* Stack sections vertically on smaller screens */
     }
@@ -345,6 +446,7 @@ h6,
         width: 100%; /* Full width */
     }
 }
+
 /* Media Queries for Responsive Dropdown */
 @media (max-width: 1200px) {
     .dropdown-menu {
@@ -354,6 +456,24 @@ h6,
     }
 }
 
+/* Additional Media Queries for Smaller Devices */
+@media (max-width: 768px) {
+    .video-section {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        margin-right: 10px; /* Reduce margin between nav links */
+    }
+    
+    .play-button-overlay {
+        font-size: 30px; /* Adjust size for smaller screens */
+    }
+
+    .video-description {
+        font-size: 12px; /* Smaller font size for descriptions */
+    }
+}
 
 
 
