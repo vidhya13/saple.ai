@@ -4,6 +4,7 @@
     --secondary: #15ACE1;
     --light: #F4F7FE;
     --dark: #14183E;
+ 
 }
 
 
@@ -197,7 +198,7 @@ h6,
 
 .navbar {
     padding: 11px 0 !important;
-    background-color: #006666;
+    /* background-color: #006666; */
     z-index: 1000;
 }
 
@@ -478,11 +479,21 @@ h6,
 
 
 /*** Hero Header ***/
+.white-checklist h5
+ {
+    color: white !important; /* Applies white color to both text and icons */
+}
+
+.white-checklist h5 i.fa-check {
+    color: white !important; /* Add the specific class (e.g., fa-check) */
+}
+
 .hero-header {
-    margin-top: -75px;
-    height: 650px;
+    margin-top: -50px;
+    height: 550px;
     background: url(../img/bg-hero.png) center center no-repeat;
     background-size: cover;
+
 }
 
 .hero-header .breadcrumb-item+.breadcrumb-item::before {
@@ -490,35 +501,30 @@ h6,
 }
 
 .carousel-item {
-    height: 450px; /* Set a fixed height for desktop, adjust as needed */
+
+    height: 350px;
+  margin-bottom: 45px;
    
 }
 
 
-.carousel-item video {
-    border-radius: 20px; /* Adjust the value as needed */
+/* Styles for carousel images */
+.carousel-item img {
+    border-radius: 20px; /* Rounded corners for images */
     overflow: hidden; /* Ensures the content stays within the rounded corners */
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    object-fit: cover; /* Ensures the video covers the container without distortion */
-
+  
+    object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
-.carousel-caption {
-    position: absolute;
-    top: 10%;  /* Adjust as needed */
-    left: 5%;  /* Adjust as needed */
-    color: #fff; /* White text */
-    padding: 10px; /* Padding around text */
-    border-radius: 5px; /* Rounded corners */
-    background: none; /* No background */
-}
+
 
 /* Styling the arrow buttons */
 .carousel-control-prev,
 .carousel-control-next {
     position: absolute;
-    top: 88%; /* Adjust position */
+    top: 80%; /* Adjust position */
     transform: translateY(-50%);
     background-color: transparent; /* Transparent background */
     border-radius: 50%; /* Round border */
@@ -541,148 +547,109 @@ h6,
 
 /* Right arrow button style */
 .carousel-control-next {
-    right: 510px; /* Position the right arrow in the right corner */
+    right: 30px; /* Position the right arrow in the right corner */
 }
 
-.video-overlay-text {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 18px;
-}
 
-/* Dot loading animation */
-.dots-container {
-    position: absolute;
-    top: 56%;
-    right: -1500px; /* Adjust position for dots */
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-}
+/* Responsive Design */
 
-.dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 2px;
-    background-color: white;
-    border-radius: 50%;
-    display: inline-block;
-    animation: dot-blink 1.5s infinite ease-in-out;
-}
-
-/* Animation keyframes for dots blinking */
-@keyframes dot-blink {
-    0%, 100% { opacity: 0.2; }
-    50% { opacity: 1; }
-}
-
-/* Timing the three dots */
-.dot:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.dot:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.dot:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-/* Responsive design */
 @media (max-width: 768px) {
+    .hero-header {
+        height: 750px; /* Adjust height for mobile screens */
+        padding-top: 0; /* No extra padding on top */
+    }
+
+    /* Adjust carousel item height for mobile */
     .carousel-item {
-        height: 200px; /* Adjust height for smaller screens */
+        height: 300px;
+  
     }
 
-    .carousel-item video {
-        width: 100%; /* Full width to fit the container */
-        height: 100%; /* Full height to fit the container */
-        object-fit: cover; /* Ensure the video covers the container without distortion */
-    }
-
-    .carousel-caption {
-        top: 5%; /* Adjust caption position */
-        left: 3%; /* Adjust caption position */
-        font-size: 14px; /* Smaller font size for mobile */
-    }
-
+    /* Adjust carousel navigation arrows for mobile */
     .carousel-control-prev,
     .carousel-control-next {
-        position: absolute;
-        top: 88%; /* Adjust position as needed */
-        transform: translateY(-50%);
-        background-color: transparent; /* Transparent background */
-        border-radius: 50%; /* Round border */
-        border: 0.05em solid white; /* White border */
-        width: 30px; /* Smaller button size for mobile */
-        height: 30px; /* Smaller button size for mobile */
-        opacity: 1; /* Ensure the buttons are visible */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white; /* Arrow color */
-        font-size: 16px; /* Smaller font size for mobile */
-        font-weight: bold;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
     }
 
-    /* Left arrow button style */
     .carousel-control-prev {
-        left: 20px; /* Adjust to position the left arrow in the left corner */
+        left: 15px;
     }
 
-    /* Right arrow button style */
     .carousel-control-next {
-        right: 430px; /* Adjust to position the right arrow in the right corner */
+        right: 15px;
     }
-    /* Adjust dot positioning */
-    .dots-container {
-        position: absolute;
-        bottom: 10px; /* Position it at the bottom of the video */
-        left: 80%; /* Center dots horizontally */
-        transform: translateX(-50%); /* Center adjustment */
-        z-index: 2; /* Ensure dots are above the video */
-        display: flex; /* Flexbox for dot layout */
-        justify-content: center; /* Center the dots */
+}
+/*** service bar ***/
+.feature-icon img {
+    width: 60px; /* Set the desired width */
+    height: 60px; /* Set the desired height */
+    margin: auto; /* Center the icon within the container */
+    display: block; /* Ensures proper centering */
+  }
+  
+  .feature-icon {
+    margin-bottom: 15px; /* Spacing between icon and text */
+  }
+  
+  /* Optional responsive adjustments */
+  @media (max-width: 768px) {
+    .feature-icon img {
+      width: 50px; /* Adjust size for smaller screens */
+      height: 50px;
     }
+  }
+/***service bar end ***/  
 
-    /* Individual dot styles */
-    .dot {
-        height: 8px; /* Adjust dot size for mobile */
-        width: 8px; /* Adjust dot size for mobile */
-        margin: 0 3px; /* Adjusted margin for spacing between dots */
-        background-color: white; /* Dot color */
-        border-radius: 50%; /* Round dots */
-        display: inline-block;
-        animation: dot-blink 1.5s infinite ease-in-out; /* Animation */
-    }
+/*** card ***/
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
 
-    /* Animation keyframes for dots blinking */
-    @keyframes dot-blink {
-        0%, 100% { opacity: 0.2; }
-        50% { opacity: 1; }
-    }
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    /* Timing the three dots */
-    .dot:nth-child(1) {
-        animation-delay: 0s;
-    }
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
-    .dot:nth-child(2) {
-        animation-delay: 0.3s;
-    }
+/* Adjust the .overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 25%; /* Adjust this for the overlay height */
+    background: rgba(8, 47, 42, 0.7); /* Transparent dark green */
+    background-color: #082f2a; /* Solid dark green */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    z-index: 2; /* Ensure the overlay is on top */
+}
 
-    .dot:nth-child(3) {
-        animation-delay: 0.6s;
-    }
+/* Make sure the parent .card has a z-index of 1 so the overlay can be above */
+.card {
+    z-index: 1;
 }
 
 
+
+/*** card end ***/
 
 
 /*** Section Title ***/
@@ -724,7 +691,7 @@ h6,
     height: 10px;
     top: 2px;
     left: 0;
-    background: rgba(33, 66, 177, .5);
+    /* background: rgba(33, 66, 177, .5); */
 }
 
 .section-title h6::after {
@@ -887,7 +854,7 @@ h6,
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    background: linear-gradient(rgba(20, 24, 62, 0), var(--dark));
+    /* background: linear-gradient(rgba(20, 24, 62, 0), var(--dark)); */
     z-index: 1;
 }
 
@@ -895,13 +862,13 @@ h6,
     display: inline-block;
     padding: 3px 15px;
     color: #FFFFFF;
-    background: rgba(20, 24, 62, .7);
+    /* background: rgba(20, 24, 62, .7); */
     border-radius: 25px;
     margin-bottom: 15px;
 }
 
 .case-overlay span.btn:hover {
-    color: var(--primary);
+    /* color: var(--primary); */
     background: #FFFFFF;
     border-color: #FFFFFF;
 }

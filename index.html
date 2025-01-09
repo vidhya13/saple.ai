@@ -19,7 +19,11 @@
     />
 
     <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
     <link
+    
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
       rel="stylesheet"
     />
@@ -134,19 +138,19 @@
 
 
 <!-- Navbar Start -->
-<div class="container-fluid sticky-top p-0">
+<div class="container-fluid sticky-top p-0 bg-white ">
   <nav class="navbar navbar-expand-lg navbar-dark p-0" style="position: relative;">
       <a href="index.html" class="navbar-brand ms-3">
-          <h1 class="text-white">Saple<span class="text-dark">.</span>AI</h1>
+          <h1 class="text-primary">Saple<span class="text-dark">.</span>AI</h1>
       </a>
       <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-          <div class="navbar-nav">
+      <div class="collapse navbar-collapse justify-content-end " id="navbarCollapse">
+          <div class="navbar-nav ">
               <!-- Products Dropdown -->
               <div class="nav-item dropdown">
-                  <a href="#" class="nav-link" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a href="#" class="nav-link text-dark" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Products
                       <i class="fas fa-chevron-down arrow-icon"></i>
                   </a>
@@ -206,7 +210,7 @@
 <div class="video-wrapper mb-4">
  
   <video class="custom-video" id="video1">
-      <source src="/saple.ai/video/sv.mp4" type="video/mp4">
+      <source src="/video/sv.mp4" type="video/mp4">
       Your browser does not support the video tag.
   </video>
   <!-- Play Button in the center -->
@@ -225,7 +229,7 @@
 <!-- GALE Demo Video -->
 <div class="video-wrapper mb-4">
   <video class="custom-video" id="video2">
-      <source src="/saple.ai/video/video2.mp4" type="video/mp4">
+      <source src="/video/video2.mp4" type="video/mp4">
       Your browser does not support the video tag.
   </video>
   <!-- Play Button in the center -->
@@ -251,7 +255,7 @@
         </div>
          <!-- Solutions Dropdown -->
          <div class="nav-item dropdown">
-          <a href="#" class="nav-link" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="#" class="nav-link text-dark" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Solutions
             <i class="fas fa-chevron-down arrow-icon"></i>
           </a>
@@ -311,7 +315,7 @@
 <div class="video-wrapper mb-4">
  
   <video class="custom-video" id="video1">
-      <source src="/saple.ai/video/sv.mp4" type="video/mp4">
+      <source src="/video/sv.mp4" type="video/mp4">
       Your browser does not support the video tag.
   </video>
   <!-- Play Button in the center -->
@@ -330,7 +334,7 @@
 <!-- GALE Demo Video -->
 <div class="video-wrapper mb-4">
   <video class="custom-video" id="video2">
-      <source src="/saple.ai/video/video2.mp4" type="video/mp4">
+      <source src="/video/video2.mp4" type="video/mp4">
       Your browser does not support the video tag.
   </video>
   <!-- Play Button in the center -->
@@ -362,8 +366,8 @@
 
         <!-- Resources Dropdown -->
         <div class="nav-item dropdown">
-          <a href="#" class="nav-link" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Resources
+          <a href="#" class="nav-link text-dark" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Explore
             <i class="fas fa-chevron-down arrow-icon"></i>
           </a>
          <div class="dropdown-menu p-3" >
@@ -422,7 +426,7 @@
 <div class="video-wrapper mb-4">
  
   <video class="custom-video" id="video1">
-      <source src="/saple.ai/video/sv.mp4" type="video/mp4">
+      <source src="/video/sv.mp4" type="video/mp4">
       Your browser does not support the video tag.
   </video>
   <!-- Play Button in the center -->
@@ -441,7 +445,7 @@
 <!-- GALE Demo Video -->
 <div class="video-wrapper mb-4">
   <video class="custom-video" id="video2">
-      <source src="/saple.ai/video/video2.mp4" type="video/mp4">
+      <source src="/video/video2.mp4" type="video/mp4">
       Your browser does not support the video tag.
   </video>
   <!-- Play Button in the center -->
@@ -467,12 +471,12 @@
         </div>
 
         <!-- Pricing & Contact Links -->
-        <a href="#" class="nav-item nav-link">Pricing</a>
-        <a href="#" class="nav-item nav-link">Contact</a>
+        <!-- <a href="#" class="nav-item nav-link">Pricing</a> -->
+        <a href="#" class="nav-item nav-link text-dark">Contact Us</a>
       </div>
 
       <!-- Search Button -->
-      <button type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#searchModal">
+      <button type="button" class="btn text-dark p-0 d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#searchModal">
         <i class="fa fa-search"></i>
       </button>
     </div>
@@ -795,96 +799,134 @@ document.addEventListener("DOMContentLoaded", function() {
    <!-- Hero Start -->
 <div class="container-fluid pt-5 hero-header mb-5" style="background-color:#51a197;">
   <div class="container pt-5">
-      <div class="row g-5 pt-5">
-          <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
-              <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">Saple AI</div>
-              <h1 class="display-4 text-white mb-4 animated slideInRight">Artificial Intelligence for Your Business</h1>
-              <p class="text-white mb-4 animated slideInRight">
-                  Streamline customer service operations with accurate,<br>
-                  faster and personalized interactions, powered by our platform’s superior AI capabilities.
-              </p>
-              <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Book a demo</a>
-              <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
-          </div>
-
-         
-          <div class="container col-lg-6 align-self-end text-lg-end mt-5">
-            <div id="videoCarousel" class="carousel slide" data-ride="carousel" >
-                <div class="carousel-inner">
-                    <!-- First Video -->
-                    <div class="carousel-item active">
-                        <div class="video-overlay-text">Video 1 Heading</div>
-                        <video class="w-100" autoplay muted>
-                            <source src="/saple.ai/video/sv.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="carousel-caption">
-                          <p>First video content and description here.</p>
-                        </div>
-                    </div>
-                    <!-- Second Video -->
-                    <div class="carousel-item">
-                        <div class="video-overlay-text">Video 2 Heading</div>
-                        <video class="w-100" autoplay muted>
-                            <source src="/saple.ai/video/video2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="carousel-caption">
-                            <p>Second video content and description here.</p>
-                        </div>
-                    </div>
-                    <!-- Third Video -->
-                    <div class="carousel-item">
-                        <div class="video-overlay-text">Video 3 Heading</div>
-                        <video class="w-100" autoplay muted>
-                            <source src="/saple.ai/video/video 3.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="carousel-caption">
-                            <p>Third video content and description here.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev">
-                    <span aria-hidden="true">&lt;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next">
-                    <span aria-hidden="true">&gt;</span>
-                    <span class="sr-only">Next</span>
-                </a>
+    <div class="row g-5 pt-5">
+      <!-- Image Carousel on the Left -->
+      <div class="col-lg-6 align-self-end mt-5" style="margin-left: -100px;"> <!-- Adjusted with negative margin -->
+        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!-- First Image -->
+            <div class="carousel-item active">
+              <img src="/img/image carousel 2.jpg" class="d-block w-100" alt="First Slide">
             </div>
+            <!-- Second Image -->
+            <div class="carousel-item">
+              <img src="/img/image carousel 1.jpg" class="d-block w-100" alt="Second Slide">
+            </div>
+            <!-- Third Image -->
+            <div class="carousel-item">
+              <img src="/img/image carousel 3.jpg" class="d-block w-100" alt="Third Slide">
+            </div>
+          </div>
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#imageCarousel" role="button" data-bs-slide="prev">
+            <span aria-hidden="true">&lt;</span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#imageCarousel" role="button" data-bs-slide="next">
+            <span aria-hidden="true">&gt;</span>
+            <span class="visually-hidden">Next</span>
+          </a>
         </div>
-
-        <!-- Dot loading animation -->
-        <div class="dots-container">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+      </div>
+      <!-- Text Content on the Right -->
+      <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5" style="margin-left: 100px;">
+        <h2 class="text-white mb-4 animated slideInRight">Enterprise-ready Customer Service Automation</h2>
+        <div class="row g-3 checklist white-checklist">
+          <div class="col-sm-12">
+            <h5 class="mb-3">
+              <i class="fa fa-check me-2"></i>Enhance customer service with AI-powered chat and voice automation.
+            </h5>
+            <h5 class="mb-3">
+              <i class="fa fa-check me-2"></i>Build hyper-personalized customer interactions using generative AI.
+            </h5>
+            <h5 class="mb-0">
+              <i class="fa fa-check me-2"></i>Efficiently manage high traffic, boost satisfaction, and lower costs.
+            </h5>
+          </div>
         </div>
-
-        <script>
-            // JavaScript to handle the video carousel
-            const videos = document.querySelectorAll('#videoCarousel video');
-            const carousel = document.querySelector('#videoCarousel');
-
-            videos.forEach((video, index) => {
-                video.addEventListener('ended', () => {
-                    const nextIndex = index + 1; // Move to the next index
-                    if (nextIndex < videos.length) {
-                        carousel.carousel(nextIndex); // Move to the next item in the carousel
-                    }
-                });
-            });
-        </script>
+        <!-- <div class="mt-4">
+          <a href="#" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Book a Demo</a>
+          <a href="#" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
+        </div> -->
+      </div>
     </div>
-</div>
+  </div>
 </div>
 <!-- Hero End -->
 
+<!--service bar-->
+<div class="container py-5">
+  <div class="row text-center">
+    <!-- Feature 1 -->
+    <div class="col-md-3">
+      <div class="feature-icon mb-3">
+        <img src="/img/enterprise.png" alt="Enterprise-ready" class="icon">
+      </div>
+      <h5 class="fw-bold">Enterprise-ready</h5>
+      <p class="text-muted">Scalable and secure – integrate seamlessly with your ecosystem</p>
+    </div>
+    <!-- Feature 2 -->
+    <div class="col-md-3">
+      <div class="feature-icon mb-3">
+        <img src="/img/artificial-intelligence.png" alt="GenAI-empowered" class="icon">
+      </div>
+      <h5 class="fw-bold">GenAI-empowered</h5>
+      <p class="text-muted">Harness the power of generative AI. Creativity meets control</p>
+    </div>
+    <!-- Feature 3 -->
+    <div class="col-md-3">
+      <div class="feature-icon mb-3">
+        <img src="/img/connection.png" alt="Omnichannel" class="icon">
+      </div>
+      <h5 class="fw-bold">Omnichannel</h5>
+      <p class="text-muted">Consistent, high-quality interactions across all customer touch points</p>
+    </div>
+    <!-- Feature 4 -->
+    <div class="col-md-3">
+      <div class="feature-icon mb-3">
+        <img src="/img/time.png" alt="24/7 service" class="icon">
+      </div>
+      <h5 class="fw-bold">24/7 service</h5>
+      <p class="text-muted">Always on, always reliable. Support that exceeds customer expectations</p>
+    </div>
+  </div>
+</div>
+<!--service bar end-->
 
+<!--card-->
+<div class="container">
+  <header>
+      <h3>AI AGENTS FOR THE ENTERPRISE</h3>
+      <p>Deploy empathetic multimodal AI agents that type, talk, listen, look, and more to scale the relationships that matter for your business.</p>
+  </header>
+  <div class="card-container">
+      <div class="card">
+          <img src="/img/Self-Service.jpg" alt="Customer Self-Service">
+          <div class="overlay">
+              <p>Customer Self-Service</p>
+          </div>
+      </div>
+      <div class="card">
+          <img src="/img/Internal Virtual Assistant.webp" alt="Internal Virtual Assistant">
+          <div class="overlay">
+              <p>Internal Virtual Assistant</p>
+          </div>
+      </div>
+      <div class="card">
+          <img src="/img/Self-Service.jpg" alt="Agent Assist">
+          <div class="overlay">
+              <p>Agent Assist</p>
+          </div>
+      </div>
+      <div class="card">
+          <img src="/img/Internal Virtual Assistant.webp" alt="Design Assist">
+          <div class="overlay">
+              <p>Design Assist</p>
+          </div>
+      </div>
+  </div>
+</div>
+<!--card end-->
     <!-- Full Screen Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1">
       <div class="modal-dialog modal-fullscreen">
