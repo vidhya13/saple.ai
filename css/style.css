@@ -81,114 +81,6 @@ h6,
 }
 
 
-/*** Navbar ***/
-/* .sticky-top {
-    /* top: -150px;
-    transition: .5s; */
-    
-    /* top: 0;
-    transition: top 0.3s ease-in-out;
-    z-index: 1020;
-} */
-
-/* .navbar {
-
-    padding: 11px 0 !important;
-    height: 75px;
-    height: auto;
-    background-color:#006666;
-} */ 
-
-
-/* .navbar .navbar-nav .nav-link {
-    margin-right: 35px;
-    padding: 5px 0;
-    color: rgba(255, 255, 255, .7);
-    outline: none;
-} */
-
-/* .navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link.active {
-    color: rgba(255, 255, 255, 1);
-    
-} */
-
-/* .navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
-    transition: transform 0.3s ease; 
-}
-.arrow-icon {
-    transition: transform 0.3s ease;
-    margin-left: 5px;
-    cursor: pointer;
-}
-
-.arrow-icon.rotate {
-    transform: rotate(180deg);
-}
-
-.dropdown-menu {
-    display: none; 
-}
-
-.dropdown-menu.show {
-    display: block; 
-}
-
-@media (max-width: 991.98px) {
-    .navbar .navbar-nav {
-        padding: 0 15px;
-        background: #006666; 
-        background: var(--primary);
-    }
-
-    .navbar .navbar-nav .nav-link  {
-        margin-right: 0;
-        padding: 10px 0;
-
-        color: rgba(255, 255, 255, 0.7);
-    }
-    .navbar .navbar-nav .dropdown-menu {
-        display: none;
-    }
-
-    .navbar .nav-item .dropdown-menu {
-        position: static;
-        float: none;
-    }
-
-}
-
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        position: absolute;
-        display: block;
-        border: none;
-        margin-top: 0;
-        top: 150%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
-        transition: all 0.5s ease;
-        z-index: 1;
-   
-    }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        top: 100%;
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
-        z-index: 1;
-    }
-}
- */
-
 /* Sticky Navbar */
 .sticky-top {
     top: 0;
@@ -198,23 +90,23 @@ h6,
 
 .navbar {
     padding: 11px 0 !important;
-    /* background-color: #006666; */
     z-index: 1000;
 }
 
 /* Navbar links */
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
-    padding-left: 15px;
+    padding-left: 5px;
     padding-right: 10px;
     font-weight: 500;
     margin-right: 20px; /* Space between nav links */
 }
 
-.navbar-collapse{
+.navbar-collapse {
     position: absolute;
-    right:50px
+    right: 50px;
 }
+
 /* Dropdown toggle positioning */
 .navbar .dropdown-toggle {
     margin-left: auto; /* Move dropdown toggle to the right */
@@ -231,98 +123,87 @@ h6,
     transition: transform 0.3s ease;
 }
 
-/* Align the dropdown menu to the right */
-.dropdown-menu {
-    right: 0; /* Align the dropdown to the right */
-    left: auto; /* Disable left positioning */
-}
-
 /* Rotate arrow when dropdown is open */
 .arrow-icon.rotate {
     transform: rotate(180deg);
 }
-.dropdown-menu{
-    position: relative;
-    right: 500px;
-}
 
-
+/* Default Dropdown Menu */
 .dropdown-menu {
     display: none; /* Hide by default */
-    background-color: white !important; /* Solid background color for dropdown */
-    padding: 0; /* Remove padding */
-    border: none; /* Remove border */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow for visibility */
-    width: 80vw; /* Set width to 80% of the viewport width */
-    min-width: 800px; /* Set a maximum width */
-    height: auto; /* Set height to auto to fit content */
-    position: absolute; /* Absolute positioning for dropdown */
-    left: 500px; /* Center the dropdown horizontally */
-    top: 100%; /* Position below the trigger */
-    transform: translateX(-78%); /* Center horizontally */
-    z-index: 1050; /* Ensure it appears above other elements */
-    opacity: 1 !important; /* Ensure full opacity */
+    background-color: white !important;
+    padding: 0;
+    border: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    width: 25vw;
+    min-width: 200px;
+    position: absolute;
+    left: 500px;
+    top: 100%;
+    transform: translateX(-78%);
+    z-index: 1050;
+    opacity: 1 !important;
 }
+
 .dropdown-menu.show {
-    display: block; /* Show when active */
+    display: block;
 }
+
 .dropdown-menu .row {
-    display: flex; /* Use flexbox to align items in the row */
-  
+    display: flex;
 }
 
 .dropdown-menu .col-md-3,
 .dropdown-menu .col-md-6 {
-    padding: 15px; /* Add padding for better spacing */
+    padding: 15px;
 }
 
 /* Show dropdown menu on hover */
 .nav-item.dropdown:hover .dropdown-menu {
-    display: block; /* Show on hover */
+    display: block;
 }
 
 /* Flexbox for dropdown content alignment */
 .dropdown-content {
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: row; /* Change to column for vertical alignment if needed */
-    justify-content: flex-start; /* Align items to the start */
-    align-items: flex-start; /* Align items at the start vertically */
-    padding: 20px; /* Add padding around the dropdown content */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
 }
 
 /* Sidebar, Main Content, and Right Sidebar alignment */
 .sidebar,
-.content,
-.video-section {
-    flex: 1; /* Allow each section to grow */
-    margin-right: 20px; /* Right margin for spacing */
+.content {
+    flex: 1;
+    margin-right: 20px;
 }
 
 .sidebar {
-    background-color: #f8f9fa; /* Light background */
-    padding: 15px; /* Add padding */
-    border-right: 1px solid #ddd; /* Separator line */
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-right: 1px solid #ddd;
 }
 
-.sidebar h3,
-.sidebar h4 {
-    color: #8d8282; /* Header color */
-}
-
-/* Remove right margin for the last section */
-.video-section {
-    margin-right: 0; /* No margin on the last section */
-}
-
-/* Adjusting styles for sidebar items */
 .sidebar ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
+    list-style: none;
+    padding-left: 20px;
 }
 
-.sidebar ul li {
-    margin-bottom: 10px; /* Space between items */
-    color: #666; /* Text color */
+.sidebar li {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.sidebar li::before {
+    content: "\f111";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 6px;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .dropdown-menu li {
@@ -330,105 +211,55 @@ h6,
     padding: 10px;
 }
 
-/* Resize the video */
-.custom-video {
-    width: 100%; /* Set video to be responsive within its container */
-    height: auto; /* Adjust the height automatically */
-    max-width: 180px; /* Limit the max size to 300px width */
-    border-radius: 10px; /* Rounded corners */
-    display: block;
-    position: relative;
-    z-index: 1;
-    pointer-events: none; /* Prevent interaction until play is clicked */
+.multicolor-bg {
+    background: linear-gradient(to right, #FFDAB9, #ADD8E6, #E6E6FA);
+    padding: 15px;
+    border-radius: 8px;
 }
 
-/* Style the play button */
-.play-button-overlay {
-    position: absolute;
-    top: 45%;
-    left: 17%;
-    transform: translate(-30%, -45%); /* Center the button */
-    font-size: 40px; /* Size of the play button */
-    color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-    z-index: 2;
-   cursor: pointer;
+.section-title, .section-item {
+    color: black;
 }
 
-/* Hover effect for the play button */
-.video-wrapper:hover .play-button-overlay {
-    color: rgba(255, 255, 255, 1); /* Full opacity on hover */
+.menuicon {
+    margin-bottom: 2px;
+    vertical-align: middle;
+    height: 30px;
+    width: 30px;
 }
 
-/* Video container */
-.video-wrapper {
-    position: relative;
-    width: 100%; /* Make the video take the full width of the section */
-    max-width: 900px; /* Limit the video width to 900px */
-    margin: 0 auto;
+.section-title {
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: bolder;
 }
-/* Styling for video description */
-.video-description {
-    color: white;
-    text-align: left; /* Align text to the left */
-    font-size: 14px;
-    position: absolute;
-    left: 42%;  /* Adjust the left position as needed */
-    top: 50%;   /* Center vertically */
-    transform: translateY(-50%); /* Adjust only the vertical centering */
-    max-width: 80%; /* Set a max width for text wrapping */
+
+.ps-3 {
+    padding-left: 1rem;
 }
-.video-section strong{
+
+.section-item {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.solitem {
     font-size: 18px;
 }
 
-
-/* Ensure the video-section maintains the right style */
-.video-section {
-    background-color: #111;
-    padding: 20px;
-    border-radius: 5px;
-    color: #fff;
-    position: relative;
-    width: 100% !important;        /* Force full width */
-    min-width: 500px !important;   /* Increase max-width */
-    margin: 0 auto;                /* Center the section */
-    box-sizing: border-box;
+#solitem:hover {
+    background-color: #e1f2f0;
 }
 
 
-.video-section h4{
-    color:white;
-}
-/* Styling the buttons */
-.btn-custom {
-    background-color: #006666;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-}
 
-.btn-outline-light:hover {
-    background-color: #fff;
-    color: #006666;
-}
-
-#xo-item,#item1,#item2 {
-    cursor: pointer; /* Show pointer on hover */
-    
-}
-
-#xo-item:hover,#item1:hover,#item2:hover,
-#d2xo-item:hover,#d2item1:hover,#d2item2:hover,
-#d3xo-item:hover,#d3item1:hover,#d3item2:hover {
-   background-color: #e1f2f0;
-}
-
-/* Media Queries for Responsive Navbar */
 @media (max-width: 992px) {
     .navbar-collapse {
         position: static; /* Set to static on small screens */
         width: 100%; /* Full width */
         margin: 0; /* Reset margin */
+        
     }
     
     .navbar-nav {
@@ -441,8 +272,7 @@ h6,
     }
 
     .sidebar,
-    .content,
-    .video-section {
+    .content {
         margin-right: 0; /* No margin on smaller screens */
         width: 100%; /* Full width */
     }
@@ -451,7 +281,7 @@ h6,
 /* Media Queries for Responsive Dropdown */
 @media (max-width: 1200px) {
     .dropdown-menu {
-        min-width: 100%; /* Use full width on smaller screens */
+        min-width: 700px; /* Use full width on smaller screens */
         left: 0; /* Align to the left */
         transform: translateX(0); /* Remove translation */
     }
@@ -459,21 +289,13 @@ h6,
 
 /* Additional Media Queries for Smaller Devices */
 @media (max-width: 768px) {
-    .video-section {
-        padding: 15px; /* Adjust padding for smaller screens */
-    }
+    
 
     .navbar-dark .navbar-nav .nav-link {
         margin-right: 10px; /* Reduce margin between nav links */
     }
     
-    .play-button-overlay {
-        font-size: 30px; /* Adjust size for smaller screens */
-    }
-
-    .video-description {
-        font-size: 12px; /* Smaller font size for descriptions */
-    }
+    
 }
 
 
