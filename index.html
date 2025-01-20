@@ -133,35 +133,53 @@ margin-left: -280px;
     
 
 
-
-     <!-- Navbar Start -->
+<!-- Navbar Start -->
 <div class="container-fluid sticky-top p-0">
   <nav class="navbar navbar-expand-lg navbar-dark p-0">
     <a href="index.html" class="navbar-brand ms-3">
       <h1 style="color: white !important;">Saple<span class="text-dark">.</span>AI</h1>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
       <div class="navbar-nav">
         <!-- Products Dropdown -->
         <div class="nav-item dropdown">
-          <a href="#" class="nav-link text-dark" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a
+            href="#"
+            class="nav-link text-dark dropdown-toggle"
+            id="productsDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Products
-            <i class="fas fa-chevron-down arrow-icon"></i>
           </a>
           <ul class="dropdown-menu p-3" aria-labelledby="productsDropdown">
             <li>
               <div class="px-3 py-2 multicolor-bg">
                 <p class="section-title">Customer service automation platform</p>
-                <p class="section-item">A multi-LLM architecture, continuously trained <br>on billions of conversations for scalability, speed, <br>and accuracy for enterprises.</p>
+                <p class="section-item">
+                  A multi-LLM architecture, continuously trained <br />
+                  on billions of conversations for scalability, speed, <br />
+                  and accuracy for enterprises.
+                </p>
               </div>
             </li>
             <li>
               <div class="d-flex align-items-center">
-                <img src="/img/headset.png" alt="aiagentmenuicon" class="menuicon">
-                <div class="px-3 section-title"> AI agents</div>
+                <img src="/img/headset.png" alt="aiagentmenuicon" class="menuicon" />
+                <a href="ai-agents.html" class="px-3 section-title">AI agents</a>
+
               </div>
               <ul class="ps-3">
                 <li class="section-item">Voice & calls</li>
@@ -171,15 +189,15 @@ margin-left: -280px;
             </li>
             <li>
               <div class="d-flex align-items-center">
-                <img src="/img/assistant.png" alt="aiassmenuicon" class="menuicon">
-                <div class="px-3 section-title">AI assistants</div>
+                <img src="/img/assistant.png" alt="aiassmenuicon" class="menuicon" />
+                <a href="ai-assistants.html" class="px-3 section-title">AI assistants</a>
               </div>
               <p class="px-3 section-item">Omnichannel agent assist</p>
             </li>
             <li>
               <div class="d-flex align-items-center">
-                <img src="/img/ai.png" alt="aianalmenuicon" class="menuicon">
-                <div class="px-3 section-title">AI analytics</div>
+                <img src="/img/ai.png" alt="aianalmenuicon" class="menuicon" />
+                <a href="ai-analytics.html" class="px-3 section-title">AI analytics</a>
               </div>
               <p class="px-3 section-item">Real-time reports and dashboards</p>
             </li>
@@ -187,21 +205,28 @@ margin-left: -280px;
         </div>
 
         <!-- Solutions Dropdown -->
-        <div class="nav-item dropdown" id="solutionsDropdown">
-          <a href="#" class="nav-link text-dark" id="solutionsDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="nav-item dropdown">
+          <a
+            href="#"
+            class="nav-link text-dark dropdown-toggle"
+            id="solutionsDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Solutions
-            <i class="fas fa-chevron-down arrow-icon"></i>
           </a>
-          <ul class="dropdown-menu p-3" id="solutionsDropdownMenu">
-            <li><strong>Financial Services</strong></li>
-            <li><strong>Insurance</strong></li>
-            <li><strong>Telecom</strong></li>
-            <li><strong>Public Sector</strong></li>
-            <li><strong>Fashion Apparel</strong></li>
-            <li><strong>Education</strong></li>
-            <li><strong>Healthcare & Hospitals</strong></li>
-            <li><strong>Pharma & Biotech</strong></li>
+          <ul class="dropdown-menu p-3" aria-labelledby="solutionsDropdown">
+            <li><a href="financial-services.html" class="dropdown-item"><strong>Financial Services</strong></a></li>
+            <li><a href="insurance.html" class="dropdown-item"><strong>Insurance</strong></a></li>
+            <li><a href="telecom.html" class="dropdown-item"><strong>Telecom</strong></a></li>
+            <li><a href="public-sector.html" class="dropdown-item"><strong>Public Sector</strong></a></li>
+            <li><a href="fashion-apparel.html" class="dropdown-item"><strong>Fashion Apparel</strong></a></li>
+            <li><a href="education.html" class="dropdown-item"><strong>Education</strong></a></li>
+            <li><a href="healthcare-hospitals.html" class="dropdown-item"><strong>Healthcare & Hospitals</strong></a></li>
+            <li><a href="pharma-biotech.html" class="dropdown-item"><strong>Pharma & Biotech</strong></a></li>
           </ul>
+          
         </div>
 
         <li class="nav-item">
@@ -222,58 +247,46 @@ margin-left: -280px;
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const dropdowns = document.querySelectorAll('.nav-item.dropdown');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    const navbarToggler = document.querySelector('.navbar-toggler');
-  
-    // Handle dropdown toggle click
-    dropdowns.forEach(function(dropdown) {
-      const dropdownToggle = dropdown.querySelector('a');
-  
-      dropdownToggle.addEventListener('click', function(e) {
-        e.preventDefault();  // Prevent default behavior of anchor
-  
-        // Close other open dropdowns
-        dropdowns.forEach(d => {
-          if (d !== dropdown) {
-            d.classList.remove('show');
-          }
-        });
-  
-        // Toggle the clicked dropdown
-        dropdown.classList.toggle('show');
+document.addEventListener("DOMContentLoaded", function () {
+  // Handle dropdown toggle behavior
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+  dropdownToggles.forEach((toggle) => {
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      const parent = toggle.parentElement;
+
+      // Close all dropdowns
+      document.querySelectorAll(".dropdown.show").forEach((dropdown) => {
+        if (dropdown !== parent) {
+          dropdown.classList.remove("show");
+        }
       });
-    });
-  
-    // Handle navbar toggler click
-    navbarToggler.addEventListener('click', function(e) {
-      e.stopPropagation();  // Prevent the click from bubbling to the document
-      navbarCollapse.classList.toggle('show');  // Toggle the navbar collapse
-    });
-  
-    // Close dropdowns and navbar when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target)) {
-        // Close dropdowns
-        dropdowns.forEach(dropdown => {
-          dropdown.classList.remove('show');  // Close all dropdowns
-        });
-        // Close the navbar collapse
-        navbarCollapse.classList.remove('show');
-      }
-    });
-  
-    // Optional: Reset dropdowns and collapse on window resize
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 992) {
-        dropdowns.forEach(dropdown => {
-          dropdown.classList.remove('show');  // Close all dropdowns
-        });
-        navbarCollapse.classList.remove('show');  // Close the navbar collapse if resizing
-      }
+
+      // Toggle the clicked dropdown
+      parent.classList.toggle("show");
     });
   });
+
+  // Close dropdowns and navbar when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown.show").forEach((dropdown) => {
+        dropdown.classList.remove("show");
+      });
+    }
+  });
+
+  // Reset dropdowns on window resize
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 992) {
+      document.querySelectorAll(".dropdown").forEach((dropdown) => {
+        dropdown.classList.remove("show");
+      });
+    }
+  });
+});
+
 </script>
 
   
