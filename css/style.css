@@ -80,26 +80,28 @@ h6,
     border-radius: 50px;
 }
 
-
 /* Sticky Navbar */
 .sticky-top {
     top: 0;
     transition: top 0.3s ease-in-out;
     z-index: 1020;
 }
-
-.navbar {
+.navbar-brand h1 {
+    color: white !important;  /* Force text color to white */
+}
+/* Navbar background color */
+.container-fluid .navbar {
+    background-color: #006666 !important;  /* Dark teal background */
     padding: 11px 0 !important;
     z-index: 1000;
 }
-
-/* Navbar links */
+/* Navbar link text color */
 .navbar-dark .navbar-nav .nav-link {
-    color: #fff;
+    color: #fff !important;                           /* White text color for navbar links */
     padding-left: 5px;
     padding-right: 10px;
     font-weight: 500;
-    margin-right: 20px; /* Space between nav links */
+    margin-right: 20px;                    /* Space between nav links */
 }
 
 .navbar-collapse {
@@ -112,37 +114,58 @@ h6,
     margin-left: auto; /* Move dropdown toggle to the right */
 }
 
-/* Dropdown arrow icon styling */
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107"; /* Font Awesome Chevron Down Icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
-    transition: transform 0.3s ease;
-}
-
 /* Rotate arrow when dropdown is open */
 .arrow-icon.rotate {
     transform: rotate(180deg);
 }
 
-/* Default Dropdown Menu */
 .dropdown-menu {
+    min-width: 15rem;
+    background-color: rgb(253, 253, 253);
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-menu .section-title {
+    font-weight: bold;
+}
+
+.dropdown-menu .section-item {
+    color: #6c757d;
+}
+
+.dropdown-menu .menuicon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.arrow-icon {
+    margin-left: 4px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    min-width: 22rem;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     display: none; /* Hide by default */
-    background-color: white !important;
-    padding: 0;
-    border: none;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    width: 25vw;
-    min-width: 200px;
+    visibility: hidden; /* Ensure it's not visible */
+    opacity: 0; /* For transition effects */
+    transition: opacity 0.3s ease;
     position: absolute;
-    left: 500px;
+    left: 0; /* Reset position */
     top: 100%;
-    transform: translateX(-78%);
-    z-index: 1050;
-    opacity: 1 !important;
+}
+
+/* Show the dropdown menu when its parent has the 'show' class */
+.nav-item.dropdown.show .dropdown-menu {
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .dropdown-menu.show {
@@ -251,177 +274,291 @@ h6,
 #solitem:hover {
     background-color: #e1f2f0;
 }
-
-
-
-@media (max-width: 992px) {
-    .navbar-collapse {
-        position: static; /* Set to static on small screens */
-        width: 100%; /* Full width */
-        margin: 0; /* Reset margin */
-        
-    }
-    
-    .navbar-nav {
-        flex-direction: column; /* Stack nav links vertically */
-        align-items: flex-start; /* Align items to the left */
-    }
-
-    .dropdown-content {
-        flex-direction: column; /* Stack sections vertically on smaller screens */
-    }
-
-    .sidebar,
-    .content {
-        margin-right: 0; /* No margin on smaller screens */
-        width: 100%; /* Full width */
-    }
+/* Navbar Collapse Behavior */
+.navbar-collapse {
+    display: none;
+    transition: transform 0.3s ease;
 }
 
-/* Media Queries for Responsive Dropdown */
-@media (max-width: 1200px) {
-    .dropdown-menu {
-        min-width: 700px; /* Use full width on smaller screens */
-        left: 0; /* Align to the left */
-        transform: translateX(0); /* Remove translation */
-    }
+.navbar-collapse.show {
+    display: block;
 }
 
-/* Additional Media Queries for Smaller Devices */
 @media (max-width: 768px) {
-    
-
-    .navbar-dark .navbar-nav .nav-link {
-        margin-right: 10px; /* Reduce margin between nav links */
+    .navbar-collapse {
+        display: block; /* Display the navbar as block when the toggler is clicked */
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background-color: #006666;
     }
-    
-    
+
+    .navbar-collapse.collapse {
+        display: none;
+    }
 }
 
 
+/* Fix dropdown menu width and position in mobile view */
+@media (max-width: 992px) {
+    .dropdown-menu {
+        width: 80vw; /* Full width on small screens */
+        position: absolute;
+        left: 50%; /* Center the dropdown */
+        transform: translateX(-50%); /* Offset to center the dropdown */
+        padding: 10px; /* Add padding for better readability */
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+        visibility: hidden; /* Ensure it starts hidden */
+        opacity: 0; /* For transition effects */
+        transition: opacity 0.3s ease; /* Smooth fade-in */
+    }
 
-/*** Hero Header ***/
-.white-checklist h5
- {
-    color: white !important; /* Applies white color to both text and icons */
+    .nav-item.dropdown.show .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        left: 320% !important; /* Force left position to 50% */
+        transform: translateX(-320%) !important; /* Reapply centering */
+    }
+
+    .nav-item.dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Correct positioning and show behavior */
+    .nav-item.dropdown.show .dropdown-menu {
+        position: absolute;
+        top: 100%; /* Align it below the parent item */
+        left: 0;
+        transform: none; /* Remove any transform */
+    }
+
+    /* Flex-direction for mobile nav links */
+    .navbar-nav {
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
+    .navbar-collapse {
+        position: static; /* Ensure proper stacking */
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-dark .navbar-nav .nav-link {
+        margin-right: 10px; /* Adjust link spacing */
+    }
+
+    /* Custom Hamburger Icon */
+    .navbar-toggler {
+        border: none !important; /* Remove the default border */
+        background: transparent; /* Make background transparent */
+        padding: 0; /* Remove default padding */
+    }
+
+    .navbar-toggler-icon {
+        width: 30px; /* Width of the hamburger icon */
+        height: 25px; /* Height of the hamburger icon */
+        background-color: transparent; /* Transparent background */
+        position: relative; /* Position the lines relative to the container */
+    }
+
+    .navbar-toggler-icon::before {
+        top: 0; /* First line at the top */
+    }
+
+    .navbar-toggler-icon::after {
+        bottom: 0; /* Third line at the bottom */
+    }
+
+    .navbar-toggler-icon span {
+        top: 50%; /* Center the middle line */
+        transform: translateY(-50%); /* Adjust for exact centering */
+    }
+
+    /* Optional: Add a box around the hamburger icon */
+    .navbar-toggler {
+        border-radius: 8px; /* Round the corners of the box */
+        background-color:#37877d; /* Set the background color of the box */
+        padding: 5px; /* Add padding to give some space around the icon */
+    }
+
+    .navbar-toggler:hover {
+        background-color: #37877d; /* Light hover effect for the box */
+    }
+
+    /* When clicked (active state) */
+    .navbar-toggler.active .navbar-toggler-icon::before {
+        transform: translateY(7px) rotate(45deg); /* Rotate the top line */
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon::after {
+        transform: translateY(-7px) rotate(-45deg); /* Rotate the bottom line */
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon span {
+        opacity: 0; /* Hide the middle line when the menu is active */
+    }
+
+    /* Mobile view adjustments for the navbar-collapse */
+    .navbar-collapse {
+        justify-content: flex-start !important; /* Ensure items don't collapse too far to the right */
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Stack navbar items vertically in mobile view */
+    }
+
+    /* Dropdown Menu Positioning */
+    .dropdown-menu {
+        width: 80vw; /* Full width on small screens */
+        left: 50%; /* Center the dropdown */
+        transform: translateX(-50%); /* Offset to center the dropdown */
+        padding: 10px; /* Add padding for better readability */
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+        visibility: hidden; /* Hide the dropdown by default */
+        opacity: 0; /* For transition effects */
+        transition: opacity 0.3s ease;
+    }
+
+    /* Show the dropdown menu when its parent has the 'show' class */
+    .nav-item.dropdown.show .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        position: absolute;
+        top: 100%; /* Align it below the parent item */
+        left: 0;
+        transform: none; /* Reset any transforms */
+    }
+
+    /* Flexbox for dropdown content alignment */
+    .dropdown-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    /* Ensure dropdown items are stacked properly */
+    .dropdown-menu .dropdown-item {
+        text-align: left;
+        padding: 12px;
+    }
+    
+    /* Ensure the dropdown closes correctly if clicked outside */
+    .dropdown-menu .dropdown-item {
+        cursor: pointer;
+    }
+
+    /* Adjusting Dropdown Hover Behavior */
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/*** Hero Section Styling ***/
+.hero-header {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on small screens */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+    background-color: #51a197;
+    background-size: cover;
+}
+
+.hero-header h2 {
+    font-size: 2rem; /* Adjust for better readability */
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Carousel Images */
+.carousel-inner img {
+    border-radius: 10px;
+    object-fit: cover;
+    max-height: 300px;
+    width: 100%;
+}
+
+/* Checklist Styling */
+.white-checklist h5 {
+    color: #ffffff; /* Text color */
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
 
 .white-checklist h5 i.fa-check {
-    color: white !important; /* Add the specific class (e.g., fa-check) */
+    color: #ffffff !important; /* Icon color */
 }
 
-.hero-header {
-    margin-top: -50px;
-    height: 550px;
-    background: url(../img/bg-hero.png) center center no-repeat;
-    background-size: cover;
-
-}
-
-.hero-header .breadcrumb-item+.breadcrumb-item::before {
-    color: var(--light);
-}
-
-.carousel-item {
-
-    height: 350px;
-  margin-bottom: 45px;
-   
-}
-
-
-/* Styles for carousel images */
-.carousel-item img {
-    border-radius: 20px; /* Rounded corners for images */
-    overflow: hidden; /* Ensures the content stays within the rounded corners */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-  
-    object-fit: cover; /* Ensures the image covers the container without distortion */
-}
-
-
-
-/* Styling the arrow buttons */
-.carousel-control-prev,
-.carousel-control-next {
-    position: absolute;
-    top: 80%; /* Adjust position */
-    transform: translateY(-50%);
-    background-color: transparent; /* Transparent background */
-    border-radius: 50%; /* Round border */
-    border: 0.05em solid white; /* White border */
-    width: 35px; /* Button size */
-    height: 35px; 
-    opacity: 1; /* Make sure the buttons are visible */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white; /* Arrow color */
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Left arrow button style */
-.carousel-control-prev {
-    left: 30px; /* Position the left arrow in the left corner */
-}
-
-/* Right arrow button style */
-.carousel-control-next {
-    right: 30px; /* Position the right arrow in the right corner */
-}
-
-
-/* Responsive Design */
-
+/* Responsive Styles */
 @media (max-width: 768px) {
     .hero-header {
-        height: 750px; /* Adjust height for mobile screens */
-        padding-top: 0; /* No extra padding on top */
+        flex-direction: column; /* Stack content vertically */
+        padding: 15px;
     }
 
-    /* Adjust carousel item height for mobile */
-    .carousel-item {
-        height: 300px;
-  
+    .hero-header .row {
+        flex-direction: column;
+        text-align: center; /* Center-align all text */
     }
 
-    /* Adjust carousel navigation arrows for mobile */
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-    }
-
-    .carousel-control-prev {
-        left: 15px;
-    }
-
-    .carousel-control-next {
-        right: 15px;
+    .carousel-inner img {
+        max-height: 200px; /* Adjust image height */
     }
 }
-/*** service bar ***/
+
+@media (max-width: 576px) {
+    .hero-header h2 {
+        font-size: 1.5rem; /* Smaller font size for smaller screens */
+    }
+
+    .carousel-inner img {
+        max-height: 150px; /* Further reduce image height */
+    }
+
+    .white-checklist h5 {
+        font-size: 0.9rem; /* Smaller font size for checklist */
+    }
+}
+
+/*** Service Bar ***/
 .feature-icon img {
     width: 60px; /* Set the desired width */
     height: 60px; /* Set the desired height */
     margin: auto; /* Center the icon within the container */
     display: block; /* Ensures proper centering */
-  }
-  
-  .feature-icon {
+}
+
+.feature-icon {
     margin-bottom: 15px; /* Spacing between icon and text */
-  }
-  
-  /* Optional responsive adjustments */
-  @media (max-width: 768px) {
+}
+
+/* Optional responsive adjustments */
+@media (max-width: 992px) {
     .feature-icon img {
-      width: 50px; /* Adjust size for smaller screens */
-      height: 50px;
+        width: 50px; /* Adjust size for smaller screens */
+        height: 50px;
     }
-  }
+}
+
+/* Ensuring proper alignment of the feature icon */
+@media (max-width: 768px) {
+    .feature-icon {
+        text-align: center; /* Center align feature icon on small screens */
+        margin-bottom: 10px; /* Adjust spacing on mobile */
+    }
+}
+
+
 /***service bar end ***/  
 
 /*** card ***/
