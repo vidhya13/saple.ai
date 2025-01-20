@@ -298,7 +298,16 @@ h6,
     }
 }
 
-
+/* Ensure dropdown-menu hides properly */
+@media (max-width: 992px) {
+    .dropdown-menu {
+      display: none !important;
+    }
+  
+    .dropdown.show .dropdown-menu {
+      display: block !important;
+    }
+  }
 /* Fix dropdown menu width and position in mobile view */
 @media (max-width: 992px) {
     .dropdown-menu {
@@ -316,8 +325,9 @@ h6,
     .nav-item.dropdown.show .dropdown-menu {
         visibility: visible;
         opacity: 1;
-        left: 320% !important; /* Force left position to 50% */
-        transform: translateX(-320%) !important; /* Reapply centering */
+        left: 340% !important; /* Force left position to 50% */
+        transform: translateX(-340%) !important; /* Reapply centering */
+        
     }
 
     .nav-item.dropdown:hover .dropdown-menu {
