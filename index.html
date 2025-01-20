@@ -50,10 +50,6 @@
     <!-- Bootstrap JS and dependencies (Bootstrap 5) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   
-   <!-- Bootstrap JS and dependencies
-   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
    <style>
     .navbar {
       background-color: white !important;
@@ -133,7 +129,8 @@ margin-left: -280px;
     
 
 
-<!-- Navbar Start -->
+
+     <!-- Navbar Start -->
 <div class="container-fluid sticky-top p-0">
   <nav class="navbar navbar-expand-lg navbar-dark p-0">
     <a href="index.html" class="navbar-brand ms-3">
@@ -142,8 +139,6 @@ margin-left: -280px;
     <button
       class="navbar-toggler"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarCollapse"
       aria-controls="navbarCollapse"
       aria-expanded="false"
       aria-label="Toggle navigation"
@@ -152,17 +147,10 @@ margin-left: -280px;
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
       <div class="navbar-nav">
-        <!-- Products Dropdown -->
         <div class="nav-item dropdown">
-          <a
-            href="#"
-            class="nav-link text-dark dropdown-toggle"
-            id="productsDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
+          <a href="#" class="nav-link text-dark" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Products
+            <i class="fas fa-chevron-down arrow-icon"></i>
           </a>
           <ul class="dropdown-menu p-3" aria-labelledby="productsDropdown">
             <li>
@@ -206,15 +194,9 @@ margin-left: -280px;
 
         <!-- Solutions Dropdown -->
         <div class="nav-item dropdown">
-          <a
-            href="#"
-            class="nav-link text-dark dropdown-toggle"
-            id="solutionsDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
+          <a href="#" class="nav-link text-dark " id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Solutions
+            <i class="fas fa-chevron-down arrow-icon"></i>
           </a>
           <ul class="dropdown-menu p-3" aria-labelledby="solutionsDropdown">
             <li><a href="financial-services.html" class="dropdown-item"><strong>Financial Services</strong></a></li>
@@ -226,7 +208,6 @@ margin-left: -280px;
             <li><a href="healthcare-hospitals.html" class="dropdown-item"><strong>Healthcare & Hospitals</strong></a></li>
             <li><a href="pharma-biotech.html" class="dropdown-item"><strong>Pharma & Biotech</strong></a></li>
           </ul>
-          
         </div>
 
         <li class="nav-item">
@@ -240,53 +221,81 @@ margin-left: -280px;
   </nav>
 </div>
 <!-- Navbar End -->
-
 <!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  // Handle dropdown toggle behavior
-  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+  const dropdowns = document.querySelectorAll(".nav-item.dropdown");
+  const navbarCollapse = document.querySelector(".navbar-collapse");
+  const navbarToggler = document.querySelector(".navbar-toggler");
 
-  dropdownToggles.forEach((toggle) => {
-    toggle.addEventListener("click", function (e) {
-      e.preventDefault();
-      const parent = toggle.parentElement;
+  // Handle dropdown toggle click
+  dropdowns.forEach(function (dropdown) {
+    const dropdownToggle = dropdown.querySelector(".nav-link");
 
-      // Close all dropdowns
-      document.querySelectorAll(".dropdown.show").forEach((dropdown) => {
-        if (dropdown !== parent) {
-          dropdown.classList.remove("show");
+    dropdownToggle.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
+
+      // Close all other dropdowns
+      dropdowns.forEach((d) => {
+        if (d !== dropdown) {
+          d.classList.remove("show");
+          const dropdownMenu = d.querySelector(".dropdown-menu");
+          if (dropdownMenu) dropdownMenu.classList.remove("show");
         }
       });
 
-      // Toggle the clicked dropdown
-      parent.classList.toggle("show");
+      // Toggle the current dropdown
+      dropdown.classList.toggle("show");
+      const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+      if (dropdownMenu) dropdownMenu.classList.toggle("show");
     });
   });
 
-  // Close dropdowns and navbar when clicking outside
+  // Handle navbar toggler click (open/close the menu)
+  navbarToggler.addEventListener("click", function (e) {
+    e.stopPropagation(); // Prevent the event from propagating to the document
+    navbarCollapse.classList.toggle("show");  // Toggle the collapse state
+    this.classList.toggle('active');  // Toggle the active state for the hamburger icon
+  });
+
+  // Close navbar collapse and dropdowns when clicking outside
   document.addEventListener("click", function (e) {
-    if (!e.target.closest(".dropdown")) {
-      document.querySelectorAll(".dropdown.show").forEach((dropdown) => {
+    // If the click is outside of navbar toggler and navbar-collapse, close everything
+    if (
+      !e.target.closest(".navbar-collapse") &&
+      !e.target.closest(".navbar-toggler") &&
+      !e.target.closest(".nav-item.dropdown")
+    ) {
+      // Close dropdowns
+      dropdowns.forEach((dropdown) => {
         dropdown.classList.remove("show");
+        const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+        if (dropdownMenu) dropdownMenu.classList.remove("show");
       });
+
+      // Close navbar collapse
+      navbarCollapse.classList.remove("show");
+
+      // Reset the hamburger icon
+      navbarToggler.classList.remove('active');
     }
   });
 
-  // Reset dropdowns on window resize
+  // Reset dropdowns and navbar collapse on window resize
   window.addEventListener("resize", function () {
-    if (window.innerWidth > 992) {
-      document.querySelectorAll(".dropdown").forEach((dropdown) => {
+    if (window.innerWidth > 992) {  // When width is above 992px (for large screens)
+      dropdowns.forEach((dropdown) => {
         dropdown.classList.remove("show");
+        const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+        if (dropdownMenu) dropdownMenu.classList.remove("show");
       });
+      navbarCollapse.classList.remove("show");
+      navbarToggler.classList.remove("active");  // Reset hamburger icon state
     }
   });
 });
-
 </script>
 
   
