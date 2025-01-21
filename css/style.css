@@ -162,6 +162,7 @@ h6,
     margin-left: -280px;
 }
 
+
 /* Show the dropdown menu when its parent has the 'show' class */
 .nav-item.dropdown.show .dropdown-menu {
     display: block;
@@ -284,66 +285,46 @@ h6,
 .navbar-collapse.show {
     display: block;
 }
-
-@media (max-width: 768px) {
-    .navbar-collapse {
-        display: block; /* Display the navbar as block when the toggler is clicked */
-        position: absolute;
-        top: 0;
-        width: 100%;
-        background-color: #006666;
-    }
-
-    .navbar-collapse.collapse {
-        display: none;
-    }
-}
-
 /* Ensure dropdown-menu hides properly */
 @media (max-width: 992px) {
     .dropdown-menu {
-      display: none !important;
+        display: none !important; /* Hide by default */
     }
-  
+
     .dropdown.show .dropdown-menu {
-      display: block !important;
+        display: block !important; /* Show when the parent has 'show' class */
     }
-  }
+}
+
 /* Fix dropdown menu width and position in mobile view */
 @media (max-width: 992px) {
     .dropdown-menu {
-        width: 80vw; /* Full width on small screens */
+        display: none !important; /* Hide by default */
         position: absolute;
-        left: 50% ; /* Center the dropdown */
-        transform: translateX(-50%) ; /* Offset to center the dropdown */
-        padding: 10px; /* Add padding for better readability */
-        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow */
-        visibility: hidden; /* Ensure it starts hidden */
-        opacity: 0; /* For transition effects */
-        transition: opacity 0.3s ease; /* Smooth fade-in */
+        left: 50%;
+        transform: translateX(-50%); /* Center the dropdown */
+        width: 100%; /* Ensure dropdown fits within the screen width */
+        max-width: 100%; /* Prevent overflow */
+        padding: 10px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+        visibility: hidden; /* Hide initially */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1050; /* Make sure it's above other content */
     }
 
+    /* Show dropdown menu when dropdown is clicked */
     .nav-item.dropdown.show .dropdown-menu {
         visibility: visible;
         opacity: 1;
-        left: 365% !important; /* Force left position to 50% */
-        transform: translateX(-340%) !important; /* Reapply centering */
-        
-    }
-
-    .nav-item.dropdown:hover .dropdown-menu {
-        visibility: visible;
-        opacity: 1;
-    }
-
-    /* Correct positioning and show behavior */
-    .nav-item.dropdown.show .dropdown-menu {
+        display: block !important; /* Force the dropdown to be visible */
+        top: 100%; /* Position it just below the dropdown toggle */
         position: absolute;
-        top: 100%; /* Align it below the parent item */
-        left: 0;
-        transform: none; /* Remove any transform */
+     margin-left: 30px;
+        transform: none; /* Remove transform */
     }
 
+  
     /* Flex-direction for mobile nav links */
     .navbar-nav {
         flex-direction: column; /* Stack links vertically */
@@ -359,6 +340,8 @@ h6,
     }
 }
 
+
+/* Adjust for smaller screens under 768px */
 @media (max-width: 768px) {
     .navbar-dark .navbar-nav .nav-link {
         margin-right: 10px; /* Adjust link spacing */
@@ -394,7 +377,7 @@ h6,
     /* Optional: Add a box around the hamburger icon */
     .navbar-toggler {
         border-radius: 8px; /* Round the corners of the box */
-        background-color:#37877d; /* Set the background color of the box */
+        background-color: #37877d; /* Set the background color of the box */
         padding: 5px; /* Add padding to give some space around the icon */
     }
 
@@ -443,7 +426,7 @@ h6,
         opacity: 1;
         position: absolute;
         top: 100%; /* Align it below the parent item */
-        left: 0;
+        margin-left: 30px;
         transform: none; /* Reset any transforms */
     }
 
@@ -472,6 +455,7 @@ h6,
         display: block;
     }
 }
+
 
 /*** Hero Section Styling ***/
 .hero-header {
