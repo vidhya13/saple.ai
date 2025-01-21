@@ -159,8 +159,11 @@ h6,
     position: absolute;
     left: 0; /* Reset position */
     top: 100%;
+    margin-left: -180px;
 }
 
+  
+  
 /* Show the dropdown menu when its parent has the 'show' class */
 .nav-item.dropdown.show .dropdown-menu {
     display: block;
@@ -478,7 +481,7 @@ h6,
     flex-direction: column; /* Stack elements vertically on small screens */
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
-    padding: 20px;
+    padding: 50px;
     background-color: #51a197;
     background-size: cover;
 }
@@ -575,15 +578,15 @@ h6,
 .card-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 100px;
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .card {
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 500px;
+    height: 280px;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -596,12 +599,12 @@ h6,
     display: block;
 }
 
-/* Adjust the .overlay */
 .overlay {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 25%; /* Adjust this for the overlay height */
+    height: 22%; /* Adjust this for the overlay height */
+    opacity: 0.8; /* Adjust this for transparency */
     background: rgba(8, 47, 42, 0.7); /* Transparent dark green */
     background-color: #082f2a; /* Solid dark green */
     color: #fff;
@@ -616,9 +619,430 @@ h6,
     z-index: 1;
 }
 
+/* Media Queries */
+
+/* For tablets and smaller screens (up to 768px) */
+@media (max-width: 768px) {
+    .card-container {
+        gap: 50px; /* Reduced gap between cards */
+        flex-direction: column; /* Stack the cards vertically */
+        align-items: center; /* Center the cards */
+    }
+
+    .card {
+        width: 80%; /* Make the cards take up more space */
+        height: auto; /* Let the height adjust based on content */
+    }
+
+    .overlay {
+        font-size: 16px; /* Adjust overlay text size for smaller screens */
+    }
+}
+
+/* For mobile screens (up to 480px) */
+@media (max-width: 480px) {
+    .card-container {
+        gap: 30px; /* Reduce gap for mobile view */
+    }
+
+    .card {
+        width: 100%; /* Cards should take full width */
+        height: auto; /* Let the height adjust based on content */
+    }
+
+    .overlay {
+        font-size: 14px; /* Further adjust overlay text size */
+    }
+}
+
 
 
 /*** card end ***/
+
+/** Ai driven **/
+
+/* Base styles (for larger screens) */
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.blue-boximage, .blue-boximage1 {
+    width: 500px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.blue-boximage {
+    margin-left: 280px;
+}
+
+.blue-boximage1 {
+    margin-right: 300px;
+    margin-top: 30px;
+}
+
+.blue-boximage img, .blue-boximage1 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+.blue-boximage:hover, .blue-boximage1:hover {
+    transform: scale(1.05);
+}
+
+.blue-boximage img:hover, .blue-boximage1 img:hover {
+    transform: scale(1.2);
+}
+
+.content, .content1 {
+    flex: 1;
+}
+
+.content {
+    margin-left: 50px;
+}
+
+.content1 {
+    margin-left: 280px;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #14183E;
+    transition: color 0.5s ease;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #14183E;
+    font-family: Arial, sans-serif;
+}
+
+.text {
+    margin-bottom: 10px;
+    color: #474646;
+    line-height: 1.6;
+}
+
+.title.visible, .subtitle.visible, .text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Media Queries for Smaller Screens --- */
+/* For tablets and smaller screens (up to 768px) */
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column; /* Stack the content vertically */
+        align-items: center; /* Center the content */
+        padding: 10px;
+    }
+
+    .blue-boximage, .blue-boximage1 {
+        width: 90%; /* Make images take up more space */
+        height: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .blue-boximage {
+        margin-bottom: 20px; /* Add some margin to separate sections */
+    }
+
+    .blue-boximage1 {
+        margin-top: 20px; /* Ensure .blue-boximage1 has margin-top in mobile */
+        margin-bottom: 50px; /* Add margin-bottom for spacing below image */
+    }
+
+    .content, .content1 {
+        margin-left: 0; /* Remove left margin */
+        margin-top: 20px;
+    }
+
+    .content1 {
+        margin-top: 20px; /* Add margin-top to content1 in mobile view */
+    }
+
+    /* Move .blue-boximage1 (image) before .content1 */
+    .section {
+        display: flex;
+        flex-direction: column; /* Stack vertically */
+    }
+
+    .blue-boximage1 {
+        order: 1; /* Image first */
+    }
+
+    .content1 {
+        order: 2; /* Content next */
+    }
+
+    .title {
+        font-size: 1.7rem; /* Slightly increase font size for smaller screens */
+    }
+
+    .subtitle {
+        font-size: 1.3rem; /* Increase subtitle font size */
+    }
+
+    .text {
+        font-size: 1rem; /* Increase text font size */
+    }
+}
+
+/* For mobile screens (up to 480px) */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem; /* Slightly increase font size for mobile */
+    }
+
+    .subtitle {
+        font-size: 1.2rem; /* Increase subtitle font size */
+    }
+
+    .text {
+        font-size: 1rem; /* Increase text font size */
+    }
+
+    .blue-boximage, .blue-boximage1 {
+        width: 100%; /* Images should take the full width */
+        height: auto;
+    }
+
+    .content, .content1 {
+        padding: 10px; /* Add padding around content */
+    }
+}
+
+
+/* For mobile screens (up to 480px) */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.3rem; /* Further reduce font size */
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .text {
+        font-size: 0.85rem; /* Reduce text size */
+    }
+
+    .blue-boximage, .blue-boximage1 {
+        width: 100%; /* Images should take the full width */
+        height: auto;
+    }
+
+    .content, .content1 {
+        padding: 10px; /* Add padding around content */
+    }
+}
+/*proven result*/
+/* General styles for the box */
+.box {
+    width: 68%;
+    height: 300px;
+    background-color: #51a197;
+    margin-left: 300px;
+}
+
+/* Metrics Section */
+.metrics {
+    display: flex;
+    flex-wrap: row;
+    gap: 100px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 30px;
+}
+
+.metric {
+    text-align: center;
+    width: 48%;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Slight downward offset */
+    transition: opacity 0.6s ease-out, transform 0.8s ease-out; /* Smooth animation */
+}
+
+.metric.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.percentage {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #14183E;
+}
+
+.description {
+    font-size: 16px;
+    color: #14183E;
+}
+
+/* Boostcontent Section */
+.boostcontent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Slight downward offset */
+    transition: opacity 0.6s ease-out, transform 0.8s ease-out; /* Smooth animation */
+}
+
+.boostcontent.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.text-content {
+    max-width: 60%;
+}
+
+.text-content h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.learn-more {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.image {
+    max-width: 35%;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 30px;
+}
+
+/* Default styles for larger screens (above 1024px) */
+
+/* Media Query for Medium Screens (Tablets and smaller desktops, 768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .box {
+        width: 90%; /* Make the box take more width */
+        margin-left: auto; /* Center the box */
+        margin-right: auto;
+    }
+
+    .metrics {
+        flex-wrap: wrap; /* Wrap metrics for better spacing */
+        gap: 50px; /* Reduce the gap */
+        padding: 20px;
+    }
+
+    .metric {
+        width: 100%; /* Each metric takes full width */
+    }
+
+    .text-content {
+        max-width: 100%; /* Allow text content to expand */
+    }
+
+    .image {
+        max-width: 50%; /* Adjust image size for medium screens */
+    }
+}
+
+/* Media Query for Small Screens (Mobile, below 768px) */
+@media screen and (max-width: 768px) {
+    .box {
+        width: 100%; /* Full width */
+        height: auto; /* Allow height to adjust */
+        margin-left: 0; /* Reset margin */
+    }
+
+    .metrics {
+        flex-direction: column; /* Stack metrics vertically */
+        gap: 20px; /* Reduce the gap further */
+        padding: 10px;
+    }
+
+    .metric {
+        width: 100%; /* Full width for each metric */
+    }
+
+    .boostcontent {
+        flex-direction: column; /* Stack content and image vertically */
+        text-align: center; /* Center-align text */
+    }
+
+    .text-content {
+        max-width: 100%;
+    }
+
+    .text-content h1 {
+        font-size: 28px; /* Adjust heading size */
+    }
+
+    .text-content p {
+        font-size: 14px; /* Adjust paragraph size */
+    }
+
+    .image {
+        max-width: 80%; /* Reduce image size */
+        margin-top: 20px;
+    }
+}
+
+/* Media Query for Extra Small Screens (Very small phones, below 480px) */
+@media screen and (max-width: 480px) {
+    .text-content h1 {
+        font-size: 24px; /* Further adjust heading size */
+    }
+
+    .text-content p {
+        font-size: 12px; /* Further adjust paragraph size */
+    }
+
+    .image {
+        max-width: 100%; /* Allow full width */
+        margin-top: 15px;
+    }
+}
+
 
 
 /*** Section Title ***/
