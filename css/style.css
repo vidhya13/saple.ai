@@ -162,8 +162,6 @@ h6,
     margin-left: -280px;
 }
 
-  
-  
 /* Show the dropdown menu when its parent has the 'show' class */
 .nav-item.dropdown.show .dropdown-menu {
     display: block;
@@ -316,8 +314,8 @@ h6,
     .dropdown-menu {
         width: 80vw; /* Full width on small screens */
         position: absolute;
-        left: 50%; /* Center the dropdown */
-        transform: translateX(-50%); /* Offset to center the dropdown */
+        left: 50% ; /* Center the dropdown */
+        transform: translateX(-50%) ; /* Offset to center the dropdown */
         padding: 10px; /* Add padding for better readability */
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow */
         visibility: hidden; /* Ensure it starts hidden */
@@ -328,7 +326,7 @@ h6,
     .nav-item.dropdown.show .dropdown-menu {
         visibility: visible;
         opacity: 1;
-        left: 340% !important; /* Force left position to 50% */
+        left: 365% !important; /* Force left position to 50% */
         transform: translateX(-340%) !important; /* Reapply centering */
         
     }
