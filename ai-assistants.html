@@ -237,28 +237,46 @@ p {
     transform: translateY(0); /* Move it to its final position */
 }
 
-/* Media Queries for Responsiveness */
+
+/* For tablets and larger screens (max-width: 1024px) */
 @media screen and (max-width: 1024px) {
     .features {
         grid-template-columns: repeat(2, 1fr);
         gap: 50px;
     }
+    .feature-card {
+        width: 95%; /* Make the card slightly wider */
+    }
 }
 
+/* For smaller tablets or large phones (max-width: 768px) */
 @media screen and (max-width: 768px) {
     .features {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-}
-
-@media screen and (max-width: 600px) {
-    h1 {
-        font-size: 2rem;
+    .feature-card {
+        width: 85%; /* Take up more width on smaller screens */
     }
 }
 
-
+@media screen and (max-width: 600px) {
+    .feature-card {
+        width: 100%; /* Adjust card width for small screens */
+        padding: 15px; /* Add some breathing room */
+    }
+    .feature-card img {
+        width: 100%; /* Make the image take the full card width */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 20px; /* Slightly smaller radius for better scaling */
+    }
+    .feature-title {
+        font-size: 1.2rem; /* Slightly smaller titles */
+    }
+    .feature-description {
+        font-size: 1rem; /* Readable description text */
+    }
+}
     </style>
 </head>
 <body>
