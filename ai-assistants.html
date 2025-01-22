@@ -3,9 +3,367 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Conversational AI</title>
+    
+    <!-- Include Font Awesome CDN for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+    /* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #08010D, #190828);
+    color: #FFFFFF;
+    overflow-x: hidden;
+}
+
+/* Fade-in Animation for the whole page content */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    padding: 50px;
+    text-align: center;
+    animation: fadeInPage 1.5s ease-in-out forwards;
+}
+
+/* Heading Styles */
+h1, h2, h4, p {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Heading 1 */
+h1 {
+    font-size: 3rem;
+    background-color: #FFFFFF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    animation-delay: 1s; /* Delay for fade-in */
+}
+
+/* Heading 2 */
+h2 {
+    font-size: 1.8rem;
+    color: #C47FFF;
+    animation-delay: 1.5s; /* Delay for fade-in */
+}
+
+/* Heading 4 */
+h4 {
+    font-size: 2.5rem;
+    color: #C47FFF;
+    animation-delay: 2s; /* Delay for fade-in */
+}
+
+/* Paragraph */
+p {
+    font-size: 1.2rem;
+    background-color: #FFFFFF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    animation-delay: 2.5s; /* Delay for fade-in */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move to the original position */
+    }
+}
+
+/* Grid layout for features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    padding: 20px;
+    opacity: 0; /* Cards are initially hidden */
+    animation: fadeInCards 2s ease-in-out forwards;
+    animation-delay: 3s; /* Delay the display of cards */
+}
+
+/* Animation for cards */
+@keyframes fadeInCards {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Card style */
+.feature-card {
+    background: linear-gradient(135deg, #08010D, #190828);
+    border-radius: 35px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px #703e9b;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-left: 1px solid #FFFFFF;
+    border-bottom: 5px solid #FFFFFF;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+    width: 85%;
+}
+
+/* Animation keyframes for fading in and sliding up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add delays to each card to make them appear one by one */
+.feature-card:nth-child(1) {
+    animation-delay: 3.2s;
+}
+.feature-card:nth-child(2) {
+    animation-delay: 3.4s;
+}
+.feature-card:nth-child(3) {
+    animation-delay: 3.6s;
+}
+.feature-card:nth-child(4) {
+    animation-delay: 3.8s;
+}
+.feature-card:nth-child(5) {
+    animation-delay: 4s;
+}
+
+/* Hover effect */
+.feature-card:hover {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), #703e9b);
+    transform: scale(1.05);
+    box-shadow: 0 20px 70px #703e9b;
+    border-left: 1px solid #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+/* Image styles */
+.feature-card img {
+    width: 100%;
+    height: 250px;
+    border-radius: 50px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card img:hover {
+    transform: scale(1.02);
+}
+
+/* Title and description styles */
+.feature-title {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #C47FFF;
+}
+
+.feature-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: white;
+}
+
+/* Key Capabilities Section */
+.key-capabilities {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    color: #C47FFF;
+    text-align: center;
+}
+
+.key-capabilities h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.key-capabilities ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+}
+
+/* Keyframes for fade-in and slide-up effect */
+.key-capabilities ul li {
+    font-size: 1.2rem;
+    color: #EAEAEA;
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+/* Icon styles */
+.key-capabilities ul li i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #C47FFF;
+}
+
+/* Add a class for when the item comes into view */
+.key-capabilities ul li.visible {
+    opacity: 1;
+    transform: translateY(0); /* Move it to its final position */
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1024px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+
+    </style>
 </head>
 <body>
-    <h1>ai-assistants</h1>
+    <div class="container">
+        <h1>Agent Assist</h1>
+        <h2> Empowering Agents with Al-Driven Assistance</h2>
+        <p class="subtitle text-white">Agent Assist solutions leverage Al to empower customer service representatives by providing real- time insights, suggested responses, and access to knowledge bases. This enhances efficiency, reduces resolution times, and ensures consistent, high-quality support, enabling agents to focus on complex and value-driven interactions.
+        </p>
+        <h4>Features</h4>
+
+        <div class="features">
+       
+            <!-- Card 2 -->
+            <div class="feature-card">
+                <img src="/img/image carousel 1.jpg" alt="Custom LLMs">
+                <h2 class="feature-title">Intelligent Information Access</h2>
+                <p class="feature-description text-white">Deliver Al-driven insights, consolidated customer data, and interaction history through an intuitive interface. Streamline onboarding and boost agent productivity, ensuring they are always equipped to handle complex queries effectively.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="feature-card">
+                <img src="/img/image carousel 2.jpg" alt="Scalable Self-Service">
+                <h2 class="feature-title">Consistent and Personalized Support</h2>
+                <p class="feature-description text-white">Enhance service quality by equipping agents with a unified view of customer interactions and advanced analytics. Enable personalized and consistent support, fostering customer satisfaction and loyalty.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="feature-card">
+                <img src="/img/image carousel 3.jpg" alt="Omnichannel Integration">
+                <h2 class="feature-title">Eliminate Workflow Bottlenecks
+                </h2>
+                <p class="feature-description text-white">Say goodbye to inefficient multitasking. Provide agents with a customizable, streamlined workspace that consolidates essential tools, allowing them to focus on delivering high-quality service without toggling between multiple systems.</p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="feature-card">
+                <img src="/img//Adaptive-AI.png" alt="24/7 Support">
+                <h2 class="feature-title">Accelerate Resolutions</h2>
+                <p class="feature-description text-white">Leverage real-time Al insights and access to customer history to empower agents with the information they need to resolve issues quickly and accurately, reducing response times and enhancing operational efficiency.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="/img//Adaptive-AI.png" alt="24/7 Support">
+                <h2 class="feature-title">Unified Agent Workspace</h2>
+                <p class="feature-description text-white">Integrate all communication channels, CRM data, and essential tools into a seamless, Al-powered interface. Agent Assist equips agents with intelligent assistance, enabling efficient interactions, faster resolutions, and exceptional customer experiences, all from one unified platform.
+                </p>
+            </div>
+        </div>
+
+        <!-- Key Capabilities Section with Icons -->
+        <div class="key-capabilities">
+            <h2>Key Capabilities</h2>
+            <ul>
+                <li>
+                    <i class="fas fa-comments"></i>
+                    Text & Instant Messaging
+                </li>
+                <li>
+                    <i class="fas fa-headset"></i>
+                    Voice AI
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    Email Automation
+                </li>
+                <li>
+                    <i class="fas fa-plug"></i>
+                    Integrations
+                </li>
+                <li>
+                    <i class="fas fa-shield-alt"></i>
+                    Data Security & Compliance
+                </li>
+                <li>
+                    <i class="fas fa-search"></i>
+                    Knowledge Search
+                </li>
+                <li>
+                    <i class="fas fa-chart-line"></i>
+                    Analytics & Reporting
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Create an IntersectionObserver to watch for when the elements come into view
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add the 'visible' class to trigger the animation
+                    entry.target.classList.add('visible');
+                    // Stop observing the current element after it has been triggered
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5  // Trigger when 50% of the element is in view
+        });
+    
+        // Target all the key capability list items and start observing them
+        document.querySelectorAll('.key-capabilities ul li').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+    
+    
 </body>
 </html>

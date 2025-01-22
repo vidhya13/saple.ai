@@ -320,7 +320,7 @@ h6,
         display: block !important; /* Force the dropdown to be visible */
         top: 100%; /* Position it just below the dropdown toggle */
         position: absolute;
-     margin-left: 30px;
+     margin-left: 20px;
         transform: none; /* Remove transform */
     }
 
@@ -851,6 +851,7 @@ h6,
     height: 300px;
     background-color: #51a197;
     margin-left: 300px;
+    visibility: hidden;
 }
 
 /* Metrics Section */
@@ -950,7 +951,8 @@ h6,
     }
 
     .metrics {
-        flex-wrap: wrap; /* Wrap metrics for better spacing */
+        display: flex;
+        flex-direction: row;
         gap: 50px; /* Reduce the gap */
         padding: 20px;
     }
