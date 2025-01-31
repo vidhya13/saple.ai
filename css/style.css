@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #37877d;
+    --primary: #0C7075;
     --secondary: #15ACE1;
     --light: #F4F7FE;
     --dark: #14183E;
@@ -87,17 +87,18 @@ h6,
     z-index: 1020;
 }
 .navbar-brand h1 {
-    color: white !important;  /* Force text color to white */
+    color: #FFFFFF !important;  /* Force text color to white */
 }
 /* Navbar background color */
 .container-fluid .navbar {
-    background-color: #006666 !important;  /* Dark teal background */
+    /* background-color: #006666 !important;   */
+    background-color: #072E33 !important;
     padding: 11px 0 !important;
     z-index: 1000;
 }
 /* Navbar link text color */
 .navbar-dark .navbar-nav .nav-link {
-    color: #fff !important;                           /* White text color for navbar links */
+    color: #FFFFFF !important;                           /* White text color for navbar links */
     padding-left: 5px;
     padding-right: 10px;
     font-weight: 500;
@@ -121,7 +122,7 @@ h6,
 
 .dropdown-menu {
     min-width: 15rem;
-    background-color: rgb(253, 253, 253);
+    background-color: FFFFFF;
     border: 1px solid #dee2e6;
     border-radius: 0.25rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -148,7 +149,7 @@ h6,
 /* Dropdown Menu */
 .dropdown-menu {
     min-width: 22rem;
-    background-color: white;
+    background-color: #FFFFFF;
     border: 1px solid #dee2e6;
     border-radius: 0.25rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -205,7 +206,7 @@ h6,
 }
 
 .sidebar {
-    background-color: #f8f9fa;
+    background-color: #FFFFFF;
     padding: 15px;
     border-right: 1px solid #ddd;
 }
@@ -255,7 +256,7 @@ h6,
 
 .section-title {
     margin-top: 5px;
-    font-size: 20px;
+    font-size: 16pt;
     font-weight: bolder;
 }
 
@@ -265,17 +266,17 @@ h6,
 
 .section-item {
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 12pt;
     font-weight: 600;
 }
 
-.solitem {
+/* .solitem {
     font-size: 18px;
 }
 
 #solitem:hover {
     background-color: #e1f2f0;
-}
+} */
 /* Navbar Collapse Behavior */
 .navbar-collapse {
     display: none;
@@ -377,12 +378,12 @@ h6,
     /* Optional: Add a box around the hamburger icon */
     .navbar-toggler {
         border-radius: 8px; /* Round the corners of the box */
-        background-color: #37877d; /* Set the background color of the box */
+        background-color: #0C7075; /* Set the background color of the box */
         padding: 5px; /* Add padding to give some space around the icon */
     }
 
     .navbar-toggler:hover {
-        background-color: #37877d; /* Light hover effect for the box */
+        background-color: #0C7075; /* Light hover effect for the box */
     }
 
     /* When clicked (active state) */
@@ -464,12 +465,13 @@ h6,
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     padding: 50px;
-    background-color: #51a197;
+    /* background-color: #51a197; */
+    background-color: #0C7075;
     background-size: cover;
 }
 
 .hero-header h2 {
-    font-size: 2rem; /* Adjust for better readability */
+    font-size: 24pt; /* Adjust for better readability */
     line-height: 1.5;
     margin-bottom: 1rem;
     text-align: center;
@@ -485,13 +487,13 @@ h6,
 
 /* Checklist Styling */
 .white-checklist h5 {
-    color: #ffffff; /* Text color */
-    font-size: 1rem;
+    color: #FFFFFF; /* Text color */
+    font-size: 12pt;
     margin-bottom: 10px;
 }
 
 .white-checklist h5 i.fa-check {
-    color: #ffffff !important; /* Icon color */
+    color: #FFFFFF !important; /* Icon color */
 }
 
 /* Responsive Styles */
@@ -513,7 +515,7 @@ h6,
 
 @media (max-width: 576px) {
     .hero-header h2 {
-        font-size: 1.5rem; /* Smaller font size for smaller screens */
+        font-size: 14pt; /* Smaller font size for smaller screens */
     }
 
     .carousel-inner img {
@@ -521,7 +523,7 @@ h6,
     }
 
     .white-checklist h5 {
-        font-size: 0.9rem; /* Smaller font size for checklist */
+        font-size: 10.5pt; /* Smaller font size for checklist */
     }
 }
 
@@ -557,6 +559,12 @@ h6,
 /***service bar end ***/  
 
 /*** card ***/
+.ai-title{
+    font-size: 24pt;
+}
+.ai-description{
+    font-size: 14pt;
+}
 .card-container {
     display: flex;
     justify-content: center;
@@ -589,10 +597,10 @@ h6,
     opacity: 0.8; /* Adjust this for transparency */
     background: rgba(8, 47, 42, 0.7); /* Transparent dark green */
     background-color: #082f2a; /* Solid dark green */
-    color: #fff;
+    color: #FFFFFF;
     text-align: center;
     padding: 10px;
-    font-size: 18px;
+    font-size: 16pt;
     z-index: 2; /* Ensure the overlay is on top */
 }
 
@@ -605,6 +613,12 @@ h6,
 
 /* For tablets and smaller screens (up to 768px) */
 @media (max-width: 768px) {
+    .ai-title{
+        font-size: 18pt;
+    }
+    .ai-description{
+        font-size: 12pt;
+    }
     .card-container {
         gap: 50px; /* Reduced gap between cards */
         flex-direction: column; /* Stack the cards vertically */
@@ -617,7 +631,7 @@ h6,
     }
 
     .overlay {
-        font-size: 16px; /* Adjust overlay text size for smaller screens */
+        font-size: 16pt; /* Adjust overlay text size for smaller screens */
     }
 }
 
@@ -709,7 +723,7 @@ h6,
 }
 
 .title {
-    font-size: 1.8rem;
+    font-size: 30pt;
     font-weight: bold;
     margin-bottom: 10px;
     color: #14183E;
@@ -717,7 +731,7 @@ h6,
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 16pt;
     font-weight: bold;
     margin-top: 20px;
     color: #14183E;
@@ -736,7 +750,7 @@ h6,
 }
 
 /* --- Media Queries for Smaller Screens --- */
-/* For tablets and smaller screens (up to 768px) */
+
 @media (max-width: 768px) {
     .section {
         flex-direction: column; /* Stack the content vertically */
@@ -784,30 +798,30 @@ h6,
     }
 
     .title {
-        font-size: 1.7rem; /* Slightly increase font size for smaller screens */
+        font-size: 20.4pt; /* 1.7rem */
     }
 
     .subtitle {
-        font-size: 1.3rem; /* Increase subtitle font size */
+        font-size: 15.6pt; /* 1.3rem */
     }
 
     .text {
-        font-size: 1rem; /* Increase text font size */
+        font-size: 12pt; /* 1rem */
     }
 }
 
 /* For mobile screens (up to 480px) */
 @media (max-width: 480px) {
     .title {
-        font-size: 1.5rem; /* Slightly increase font size for mobile */
+        font-size: 18pt; /* 1.5rem */
     }
 
     .subtitle {
-        font-size: 1.2rem; /* Increase subtitle font size */
+        font-size: 14.4pt; /* 1.2rem */
     }
 
     .text {
-        font-size: 1rem; /* Increase text font size */
+        font-size: 12pt; /* 1rem */
     }
 
     .blue-boximage, .blue-boximage1 {
@@ -820,19 +834,18 @@ h6,
     }
 }
 
-
-/* For mobile screens (up to 480px) */
+/* For smaller mobile screens (up to 480px) */
 @media (max-width: 480px) {
     .title {
-        font-size: 1.3rem; /* Further reduce font size */
+        font-size: 15.6pt; /* 1.3rem */
     }
 
     .subtitle {
-        font-size: 1rem;
+        font-size: 12pt; /* 1rem */
     }
 
     .text {
-        font-size: 0.85rem; /* Reduce text size */
+        font-size: 10.2pt; /* 0.85rem */
     }
 
     .blue-boximage, .blue-boximage1 {
@@ -844,12 +857,14 @@ h6,
         padding: 10px; /* Add padding around content */
     }
 }
+
 /*proven result*/
 /* General styles for the box */
 .box {
     width: 68%;
     height: 300px;
-    background-color: #51a197;
+    /* background-color: #51a197; */
+    background-color: #0C7075;
     margin-left: 300px;
     visibility: hidden;
 }
@@ -884,14 +899,14 @@ h6,
 }
 
 .percentage {
-    font-size: 30px;
+    font-size: 30pt;
     font-weight: bold;
     margin: 10px 0;
     color: #14183E;
 }
 
 .description {
-    font-size: 16px;
+    font-size: 12pt;
     color: #14183E;
 }
 
@@ -918,12 +933,12 @@ h6,
 }
 
 .text-content h1 {
-    font-size: 35px;
+    font-size: 30pt;
     margin-bottom: 20px;
 }
 
 .text-content p {
-    font-size: 16px;
+    font-size: 14pt;
     margin-bottom: 20px;
 }
 
@@ -944,6 +959,7 @@ h6,
 
 /* Media Query for Medium Screens (Tablets and smaller desktops, 768px - 1024px) */
 @media screen and (max-width: 1024px) {
+    
     .box {
         width: 90%; /* Make the box take more width */
         margin-left: auto; /* Center the box */
@@ -972,6 +988,9 @@ h6,
 
 /* Media Query for Small Screens (Mobile, below 768px) */
 @media screen and (max-width: 768px) {
+    .percentage{
+        font-size: 22pt;
+    }
     .box {
         width: 100%; /* Full width */
         height: auto; /* Allow height to adjust */
@@ -980,8 +999,8 @@ h6,
 
     .metrics {
         flex-direction: column; /* Stack metrics vertically */
-        gap: 20px; /* Reduce the gap further */
-        padding: 10px;
+        gap: 15pt; /* 20px ≈ 15pt */
+        padding: 7.5pt; /* 10px ≈ 7.5pt */
     }
 
     .metric {
@@ -998,35 +1017,34 @@ h6,
     }
 
     .text-content h1 {
-        font-size: 28px; /* Adjust heading size */
+        font-size: 21pt; /* 28px ≈ 21pt */
     }
 
     .text-content p {
-        font-size: 14px; /* Adjust paragraph size */
+        font-size: 10.5pt; /* 14px ≈ 10.5pt */
     }
 
     .image {
         max-width: 80%; /* Reduce image size */
-        margin-top: 20px;
+        margin-top: 15pt; /* 20px ≈ 15pt */
     }
 }
 
 /* Media Query for Extra Small Screens (Very small phones, below 480px) */
 @media screen and (max-width: 480px) {
     .text-content h1 {
-        font-size: 24px; /* Further adjust heading size */
+        font-size: 18pt; /* 24px ≈ 18pt */
     }
 
     .text-content p {
-        font-size: 12px; /* Further adjust paragraph size */
+        font-size: 10pt; /* 12px ≈ 9pt */
     }
 
     .image {
         max-width: 100%; /* Allow full width */
-        margin-top: 15px;
+        margin-top: 11.25pt; /* 15px ≈ 11.25pt */
     }
 }
-
 
 
 /*** Section Title ***/
@@ -1099,11 +1117,11 @@ h6,
 .btn-primary,.btn-outline-primary{
    color: #37877d;  
     border-color: #37877d;   
-    background-color: white;
+    background-color: #FFFFFF;
 }
 .btn-primary:hover,.btn-outline-primary:hover{
     background-color: #37877d;
-    color: white;
+    color: #FFFFFF;
     border-color: #37877d;
 }
 
