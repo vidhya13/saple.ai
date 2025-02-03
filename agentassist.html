@@ -80,20 +80,22 @@
 }
 
 /* Text Styling */
-h1 {
-  font-size: 2.5rem;
+.about-title {
+  font-family: 'Éxo';
+  font-size: 36pt;
   color: #14183E;
   font-weight: bold;
   margin-bottom: 1rem;
   text-align: left;
 }
 
-p {
-  font-size: 1.1rem;
+.about-text {
+font-size: 14pt;
   line-height: 1.6;
   text-align: left;
   margin-bottom: 1rem;
 }
+
 
 /* Initially hide the image and content */
 .about-image, .about-title, .about-text {
@@ -122,7 +124,7 @@ p {
 
 /* Styling for the feature title */
 .featuretitle {
-  font-size: 2.5rem;
+  font-size: 36pt;
   text-align: center;
   opacity: 0;
   transform: translateY(20px); /* Start position below */
@@ -145,8 +147,9 @@ p {
 
 .feature-card {
   flex: 1 1 18%; /* Adjust width for better fit in the row */
-  background-color: #F4F7FE;
-  color: #fff;
+  /* background-color: #F4F7FE; */
+  background-color: #FFFFFF;
+  color: #FFFFFF;
   padding: 1.5rem;
   border-radius: 25px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -170,7 +173,8 @@ p {
 }
 
 .feature-card:hover {
-  background: #37877d;
+  /* background: #37877d; */
+  background: #0C7075;
   transform: translateY(-20px);
   box-shadow: 0 20px 60px rgba(0, 111, 95, 0.6);
   border-left: 4px solid #FFFFFF;
@@ -179,22 +183,23 @@ p {
 
 .feature-description {
   color: black;
-  font-size: 1.05rem;
+  font-size: 14pt;
   transition: color 0.3s ease;
 }
 
 .feature-card:hover .feature-description {
-  color: #F4F7FE; /* White text color on hover */
+  /* color: #F4F7FE;  */
+  color: #FFFFFF;
 }
 
 .feature-title {
   margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+  font-size:18pt;
   transition: color 0.3s ease;
 }
 
 .feature-card:hover .feature-title {
-  color: #F4F7FE; /* White color when card is hovered */
+  color: #FFFFFF; /* White color when card is hovered */
 }
 
 .key-capabilities {
@@ -220,14 +225,14 @@ p {
 }
 
 .scrolling-headline i {
-  font-size: 2rem;
+  font-size: 24pt;
   color: #007bff; /* Primary color for icons */
   margin-bottom: 10px;
 }
 
 .scrolling-headline h5 {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 12pt;
   text-align: center;
 }
 
@@ -247,23 +252,21 @@ p {
   margin: 0;
   padding: 0;
 }
-
-/* Responsive Design */
 @media (max-width: 768px) {
   /* Adjust Key Capabilities Text */
   .key-capabilities h2 {
-    font-size: 2rem;
+    font-size: 24pt; /* 2rem */
   }
 
   .key-capabilities p {
-    font-size: 1rem;
+    font-size: 12pt; /* 1rem */
     text-align: center;
   }
 
   /* Features Section */
   .features {
     flex-direction: column; /* Stack feature cards vertically on smaller screens */
-    gap: 1.5rem;
+    gap: 18pt; /* 1.5rem */
   }
 
   .feature-card {
@@ -280,28 +283,29 @@ p {
   .col-lg-6 {
     flex: 0 0 100%; /* Stack columns in mobile */
     max-width: 100%;
-    margin-bottom: 1.5rem; /* Add spacing between image and text */
+    margin-bottom: 18pt; /* 1.5rem */
   }
 
   .about-img img {
     max-width: 100%;
-    margin-bottom: 1rem; /* Ensure space between image and text */
+    margin-bottom: 12pt; /* 1rem */
   }
 }
 
 @media (max-width: 576px) {
   .features {
-    gap: 1rem;
+    gap: 12pt; /* 1rem */
   }
 
   h1, h2 {
-    font-size: 1.8rem;
+    font-size: 21.6pt; /* 1.8rem */
   }
 
   .key-capabilities p {
-    font-size: 0.95rem;
+    font-size: 11.4pt; /* 0.95rem */
   }
 }
+
 
  </style>
   
@@ -331,7 +335,7 @@ p {
 <div class="container-fluid sticky-top p-0">
   <nav class="navbar navbar-expand-lg navbar-dark p-0">
     <a href="index.html" class="navbar-brand ms-3">
-      <h1 style="color: white !important;">Saple<span class="text-dark">.</span>AI</h1>
+      <h1 style="color: #FFFFFF !important;">Saple<span class="text-dark">.</span>AI</h1>
     </a>
     <button
       class="navbar-toggler"
@@ -690,7 +694,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     <!-- Footer Start -->
-    <div class="container-fluid text-white-50 footer pt-5" style="background-color: #006666;">
+    <div class="container-fluid text-white-50 footer pt-5" style="background-color: #072E33;">
         <div class="container py-5">
           <div class="row g-5">
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
